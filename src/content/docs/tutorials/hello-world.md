@@ -8,7 +8,7 @@ Following each of the tasks in this category will start you on your way to getti
 
 Ready? Let's go!
 
-> These tutorials will always assume that you have connected to the robot,  started on the homepage and completed the previous tutorials. To find out how to connect to your robot click [here](/docs/connecting)
+> These tutorials will always assume that you have connected to the robot,  started on the homepage and completed the previous tutorials. To find out how to connect to your robot click [here](/tools/connecting)
 
 # Creating your first program
 
@@ -33,7 +33,7 @@ Both can be used to program a winning robot for the competition and it is up to 
 
 Details on both these methods can be found in the programming section of the documentation.
 
-If you are running into problems using the editor its functionality is documented [here](https://hr-robocon.org/docs/editor#the-editor-interface).
+If you are running into problems using the editor its functionality is documented [here](/tools/editor#the-editor-interface).
 
 1. In the editor window write:
 
@@ -51,6 +51,6 @@ The logs should then appear with a friendly "Hello world!"
 
 # Troubleshooting and Further Reading
 
-[Connecting to the robot](/docs/connecting) <br>
-[Uploading and running code](/docs/uploading) <br>
-[Using the editor](/docs/editor)
+[Connecting to the robot](/tools/connecting) <br>
+[Uploading and running code](/tools/uploading) <br>
+[Using the editor](/tools/editor)

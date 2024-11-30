@@ -78,7 +78,7 @@ R.motors[2] = 0
 A final note, even if you set both motors to the same power, your robot probably won't drive in a perfectly straight line. This is due to defects in the motors, and unless you get specialised motors, no two motors will have the same offset. How your robot deals with this is up to you!
 
 # Troubleshooting and Further Reading
-[Connecting to the robot](/docs/connecting) <br>
-[Uploading and running code](/docs/uploading) <br>
-[Using the editor](/docs/editor) <br>
-[Motors](/docs/motors)
+[Connecting to the robot](/tools/connecting) <br>
+[Uploading and running code](/tools/uploading) <br>
+[Using the editor](/tools/editor) <br>
+[Motors](/programming/motors)

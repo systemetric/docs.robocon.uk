@@ -13,8 +13,8 @@ There are 4 modes:
 |Digital Output|`robot.OUTPUT`|Allows you to write a high or low signal|
 |Digital Input|`robot.INPUT`|Allows you to read a high or low signal|
 |Analog Input|`robot.INPUT_ANALOG`|Allows you to read a voltage, like a voltmeter|
-|Pullup Input|`robot.INPUT_PULLUP`|Like analog, but uses a [weak pullup resistor](/docs/gpio#pull-ups)|
-|Servo Input|`robot.PWM_SERVO`|Allows you to use a servo. [Read more about servos](/docs/servos)
+|Pullup Input|`robot.INPUT_PULLUP`|Like analog, but uses a [weak pullup resistor](/programming/gpio#pull-ups)|
+|Servo Input|`robot.PWM_SERVO`|Allows you to use a servo. [Read more about servos](/programming/servos)
 
 :::tip
 The GPIO are numbered 0-3

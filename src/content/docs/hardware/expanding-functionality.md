@@ -27,5 +27,5 @@ You can use USB devices using the [`serial`](https://pyserial.readthedocs.io/en/
 UART is not enabled by default on the BrainBox and you will need to ask on the forums for us to provide a patch to enable it should you wish to use it.
 
 :::tip
-Please ask on the forums for more infomation if you wish to expand your BrainBox. 
+Please contact us for more infomation if you wish to expand your BrainBox. 
 :::

@@ -11,7 +11,7 @@ Unless the battery is really very low the front led will blink very briefly when
 
 ## The BrainBox appears to power up, but I can't connect to the website and the blue LED lights but never starts flashing.
 
-This can happen if erroneous code which does not start with `R = robot.Robot()` is uploaded to The BrainBox. If you think this may have happened, download [this file](/main.py) and place it on a USB stick. Put the USB stick into The BrainBox and turn the robot on normally. Wait 5 minutes, if you do not at this point get the flashing blue light, contact us through the [forum](/forum).
+This can happen if erroneous code which does not start with `R = robot.Robot()` is uploaded to The BrainBox. If you think this may have happened, download [this file](/main.py) and place it on a USB stick. Put the USB stick into The BrainBox and turn the robot on normally. Wait 5 minutes, if you do not at this point get the flashing blue light, please contact us!
 
 :::warning
 Using this file will overwrite the current robot code. It will not touch any files you have stored in the editor.
@@ -43,7 +43,7 @@ When you call R.see() the camera preview in the top right should show you what t
 print(R.see())
 
 ```
-If this prints out the markers then the issue is probably with your code, please see the [vision docs](https://hr-robocon.org/docs/vision)
+If this prints out the markers then the issue is probably with your code, please see the [vision docs](/programming/vision)
 
 ## My GPIO input doesn't seem to work.
 When you set multiple pins, you'll need to set them in order.<br/>
@@ -81,7 +81,7 @@ We can post kits from Hills Road however you will need to cover the costs of shi
 
 ## What is the patch and how do I install it?
 
-The patch is an update which improve your BrainBox, by adding more docs, more blocks to blocky, faster boot times and more! To patch your robot please follow the instructions [here](https://hr-robocon.org/docs/patching-the-robot).
+The patch is an update which improve your BrainBox, by adding more docs, more blocks to blocky, faster boot times and more! To patch your robot please follow the instructions [here](/tools/patching-the-robot).
 
 ## Why is the time wrong
 

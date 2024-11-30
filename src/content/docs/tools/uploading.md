@@ -4,7 +4,7 @@ category: Tools
 position: 7
 ---
 If you've already got some code you want to run on the robot, or you prefer to code in another application you'll need
-to follow these steps when uploading and running code on the robot. If not, we **strongly** recommend [using the editor](/docs/editor.md).
+to follow these steps when uploading and running code on the robot. If not, we **strongly** recommend [using the editor](/tools/editor.md).
 
 :::warning
 The methods outlined here have been depreciated infavour of the editor. The documentation here remains for development purposes only.
@@ -16,7 +16,7 @@ The methods outlined here have been depreciated infavour of the editor. The docu
 Easy access to the upload page has been removed in favour of the editor. The instructions here remain for the purpose of developemental use. If you are looking to run code please see instruuctions for the editor
 :::
 
-Assuming you've [connected to your robot](/docs/connecting.md), head to <http://robot.go/upload>
+Assuming you've [connected to your robot](/tools/connecting.md), head to <http://robot.go/upload>
 
 You should now see the upload interface.
 
