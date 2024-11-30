@@ -1,0 +1,33 @@
+---
+title: Welcome to the RoboCon Docs!
+description: Your one-stop shop for all things RoboCon.
+template: splash
+hero:
+  tagline: Containing everything you'll need to know about your RoboCon kit.
+  image:
+    file: ../../assets/houston.webp
+  actions:
+    - text: Dive in
+      link: /welcome/getting-started
+      icon: right-arrow
+    - text: To the RoboCon website
+      link: https://robocon.uk
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Next steps
+
+<CardGrid stagger>
+	<Card title="Not looking for the docs?" icon="information">
+		Visit the [RoboCon website](https://robocon.uk) for information about the competition and how to get involved.
+	</Card>
+	<Card title="Just getting started?" icon="rocket">
+		Visit our [getting started with your kit](/welcome/getting-started) guide. Then, head over to our [challenges](/docs/tools/connecting) page to get to grips with your exciting new kit!
+	</Card>
+	<Card title="Still stuck?" icon="puzzle">
+		[Get in contact with us](https://robocon.uk/contact)! Send us an email, and we'll answer any questions you have. You can also arrange a video call with one of our Hills Road student mentors!
+	</Card>
+</CardGrid>
