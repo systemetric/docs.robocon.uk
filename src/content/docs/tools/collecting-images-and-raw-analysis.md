@@ -3,9 +3,6 @@ title: Collecting Images and Raw Analysis
 category: Tools
 position: 8
 ---
-
-# Collecting Images and Raw Analysis
-
 Every time the robot takes a picture it is updated on the web interface, during development it is occasionally useful to be able to also keep a log of pictures that have been analysed to check the camera focus, motion blur etc.
 
 ## Gathering Data:

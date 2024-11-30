@@ -3,9 +3,6 @@ title: Connecting
 category: Tools
 position: 1
 ---
-
-# Connecting to the Robot
-
 1. Turn on the robot by following the instructions [here](/docs/turning-everything-on.md).
 1. Turn on your computer and wait until you reach the Windows desktop.
 2. Click on the WiFi icon in the bottom right and connect to `RoboConYYYY-TeamXX` where `YYYY` is the competition year and `XX` is your team number.

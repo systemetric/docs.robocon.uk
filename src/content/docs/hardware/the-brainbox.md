@@ -3,8 +3,6 @@ title: The BrainBox
 category: Hardware
 position: 2
 ---
-# The BrainBox
-
 The BrainBox is the center of the kit, it controls power, provides you with useful electronics and is where your code runs. Do **NOT** open the BrainBox unless given written permission by Hills Road RoboCon.
 
 ![The brain box](/images/brainbox.jpg)

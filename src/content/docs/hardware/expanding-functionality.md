@@ -3,7 +3,6 @@ title: Expanding Functionality
 category: Hardware
 position: 5
 ---
-# Expanding Functionality
 
 :::warning
 Although the I2C and UART are connected to the Raspberry Pi, they operate at 5.1V not 3.3V. Check that your devices are compatible first!

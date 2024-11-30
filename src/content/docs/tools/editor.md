@@ -3,8 +3,6 @@ title: Using the Editor
 category: Tools
 position: 3
 ---
-# Using the Editor
-
 We recommend you use the code editor that's included with Shepherd to program your robot. You can either program in Python or use Blockly, a powerful Scratch-like programming tool.
 
 Assuming you've [connected to your robot](/docs/connecting.md), head to <http://robot.go/editor> or click the orange

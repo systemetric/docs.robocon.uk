@@ -3,8 +3,6 @@ title: Initialising the Robot
 category: Programming
 position: 2
 ---
-# Initialising the Robot
-
 When using Python to program your robot, you must remember to initialise the robot. If you're using Blockly, this is done automatically.
 
 All of the code required to control the Robot is located in the `robot` python module.

@@ -3,12 +3,11 @@ title: Libraries
 category: Programming
 position: 9
 ---
-
-# Libraries
-
 :::tip
-  if you wish to use a library that is not on the list, please contact us.
+  If you wish to use a library that is not on the list, please contact us. 
+  `pip install package` will not work on your robot!
 :::
+
 ### the following libraries are installed on your robot.
 | Package     | Version |
 |-------------|---------|

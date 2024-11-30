@@ -3,8 +3,6 @@ title: Patching the Robot
 category: Tools
 position: 6
 ---
-# Patching the Robot
-
 An important part of looking after your robot is making sure its software is up to date. Over time **RoboCon** may release patches that allow you to update your robot. Follow the steps below to bring your robot up to date.
 
 ## Steps to Patch

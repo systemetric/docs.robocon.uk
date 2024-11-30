@@ -3,8 +3,6 @@ title: Getting Started
 category: None
 position: 1
 ---
-# Getting Started
-
 Welcome to the docs for **Robocon 2024**!
 
 We suggest you first grasp the idea of the [rules](/rulebook.pdf). 

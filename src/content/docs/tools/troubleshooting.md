@@ -3,8 +3,6 @@ title: Troubleshooting
 category: Tools
 position: 5
 ---
-# Troubleshooting
-
 Here are a few *common* issues you might have and some solutions to them. Student Robotics has a [similar section](https://studentrobotics.org/docs/troubleshooting/) on their website which is also relevant.
 
 ## I've connected a battery and the power switch to the black connector but never get any lights on The BrainBox.

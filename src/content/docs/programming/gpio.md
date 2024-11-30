@@ -3,8 +3,6 @@ title: GPIO
 category: Programming
 position: 4
 ---
-# GPIO
-
 The GPIO _(General Purpose Input Output)_ allows you to turn on LEDs, react to button presses, or do just about anything.
 
 Our BrainBox has 4 GPIO pins that you can control. Before you do anything with a pin, you must first set its mode.

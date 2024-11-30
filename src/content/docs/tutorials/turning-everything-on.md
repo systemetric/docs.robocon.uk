@@ -3,7 +3,7 @@ title: Turning everything on
 category: Tutorials
 position: 1
 ---
-# The BrainBox
+## The BrainBox
 
 The BrainBox is the core of the kit which we provide. In it is all of the electronics and software you need to power a robot. Lets start by turning it on. Take a battery from the kit and plug it into the power lead, then take a red "power button" and connect that to the **black** connector along the top of the  BrainBox.
 
@@ -11,7 +11,7 @@ The BrainBox is the core of the kit which we provide. In it is all of the electr
 
 Pressing the start button will cause the blue status LED on the front of the BrainBox to turn on. When the light starts flashing your BrainBox is ready to run code. You can now turn on your tablet by pressing the power button on the left-hand side and [connect to your robot](/docs/connecting). The status LED will go solid while code is running.
 
-# How to turn everything off
+## How to turn everything off
 
 When you are done for the day, press the power button, the status LED will flash rapidly, when this turns of you may unplug the battery.
 

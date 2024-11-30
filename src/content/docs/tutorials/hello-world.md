@@ -3,8 +3,6 @@ title: Hello World
 category: Tutorials
 position: 2
 ---
-# Hello
-
 Welcome to the RoboCon tutorials!<br>
 Following each of the tasks in this category will start you on your way to getting your robot doing stuff.
 

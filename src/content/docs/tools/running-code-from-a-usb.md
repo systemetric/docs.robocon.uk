@@ -3,8 +3,6 @@ title: USB Tricks
 category: Tools
 position: 4
 ---
-# USB Tricks
-
 ![USB Stick](/images/usbstick.jpg)
 
 :::tip

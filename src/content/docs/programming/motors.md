@@ -3,8 +3,6 @@ title: Motors
 category: Programming
 position: 3
 ---
-# Motors
-
 Motors can be used for all sorts of things, besides just moving your robot. For instance, they could also be used as part of a mechanism to collect cubes. However you decide to use them, they're really simple to control.
 
 When you control motors, you can choose how much power you want to give them. This is expressed as a percentage, so 0% means a stopped motor and 100% means a motor at full power.

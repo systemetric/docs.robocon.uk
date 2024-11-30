@@ -3,8 +3,6 @@ title: Learning Python
 category: Programming
 position: 1
 ---
-# Learning Python
-
 Python is an interpreted high-level programming language for general-purpose programming. First released in 1991, Python has a design philosophy that emphasises code readability, notably using significant whitespace.
 
 :::tip
