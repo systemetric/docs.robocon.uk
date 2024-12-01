@@ -1,7 +1,8 @@
 ---
 title: GPIO
 category: Programming
-position: 4
+sidebar:
+  order: 4
 ---
 The GPIO _(General Purpose Input Output)_ allows you to turn on LEDs, react to button presses, or do just about anything.
 

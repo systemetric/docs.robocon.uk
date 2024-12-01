@@ -1,18 +1,19 @@
 ---
 title: Uploading and Running Code
 category: Tools
-position: 7
+sidebar:
+  order: 7
 ---
 If you've already got some code you want to run on the robot, or you prefer to code in another application you'll need
 to follow these steps when uploading and running code on the robot. If not, we **strongly** recommend [using the editor](/tools/editor.md).
 
-:::warning
+:::caution
 The methods outlined here have been depreciated infavour of the editor. The documentation here remains for development purposes only.
 :::
 
 ## Upload
 
-:::warning
+:::caution
 Easy access to the upload page has been removed in favour of the editor. The instructions here remain for the purpose of developemental use. If you are looking to run code please see instruuctions for the editor
 :::
 
@@ -29,7 +30,7 @@ the archive. This should be the entry point for the program.
 
 Now click the **Upload** button to upload the selected file.
 
-:::warning
+:::caution
 Uploading code will stop the robot if it is currently running.
 :::
 
@@ -48,7 +49,7 @@ Choose the zone you'd like the robot to think it's in and then choose the mode. 
 meaning your code can run for as long as you need it to. **Competition** mode stops your code after 3 minutes, like it
 would in the arena.
 
-:::warning
+:::caution
 Before you run your robot, make sure it's on the floor and NOT on a table!
 :::
 

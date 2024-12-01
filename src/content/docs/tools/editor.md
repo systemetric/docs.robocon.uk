@@ -1,7 +1,8 @@
 ---
 title: Using the Editor
 category: Tools
-position: 3
+sidebar:
+  order: 3
 ---
 We recommend you use the code editor that's included with Shepherd to program your robot. You can either program in Python or use Blockly, a powerful Scratch-like programming tool.
 

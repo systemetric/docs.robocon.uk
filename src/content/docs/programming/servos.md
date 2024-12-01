@@ -1,7 +1,8 @@
 ---
 title: Servos
 category: Programming
-position: 5
+sidebar:
+  order: 5
 ---
 Servos are a bit like motors, except their position is fixed. This is useful for building an arm mechanism that grabs cubes, or anything else that has fixed states that it needs to be in.
 

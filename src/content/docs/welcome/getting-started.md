@@ -1,7 +1,8 @@
 ---
 title: Getting Started
 category: None
-position: 1
+sidebar:
+  order: 1
 ---
 Welcome to the docs for **Robocon 2024**!
 

@@ -1,7 +1,8 @@
 ---
 title: Hello GPIO
 category: Tutorials
-position: 5
+sidebar:
+  order: 5
 ---
 GPIO, or General Purpose Input Output, is the main way you'll interface with simple or obscure bits of hardware. This tutorial will introduce the GPIO system and how to use it.
 

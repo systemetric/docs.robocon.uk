@@ -1,7 +1,8 @@
 ---
 title: Batteries
 category: Hardware
-position: 1
+sidebar:
+  order: 2
 ---
 ![Zippy Compact 2200mAh battery](/images/63391_m_1__6.jpg)
 
@@ -15,7 +16,7 @@ Your kit will come with several pieces of battery-related equipment:
 
 You must not use any batteries, chargers, bags or cables **not** explicitly authorised by **Hills Road RoboCon**. If you have any doubts or wish to request permission to use a battery, charger, charging bag or battery cable not provided by **Hills Road RoboCon**, please contact [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk).
 
-:::warning
+:::caution
 
 * Never leave batteries unattended when they are in use or charging.
 * Always place the batteries in the provided charging bag when charging or storing.
@@ -37,7 +38,7 @@ To use your batteries, you must connect them to the **Hills Road RoboCon** Brain
 
 During operation, the battery is protected by over-current protection by a regulator on the power board. If any equipment is short circuited, the over-current protection will activate - protecting the battery. There is a fuse placed inline with the power cord. If you suspect the fuse has gone something *very* wrong has happened. This is an important safety feature.
 
-:::warning
+:::danger
 
 Do **NOT**, under any circumstances, bypass or replace the fuse. If the fuse has blown then the power board has failed and **must** be replaced for safe operation. If you suspect the fuse has blown then please contact [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk) straight away.
 
@@ -61,7 +62,7 @@ The exact charger you have will vary, however the one you have should look a bit
 
 To charge the battery find an adapter and plug the charger into the mains. All three LED's should light up red. Take the battery and place it in the LiPo-safe bag so that only the leads protrude then take the four pin lead from the battery. Then plug that into the four pin connector on the charger, noting the direction they are keyed in.
 
-:::warning
+:::caution
 
 Always make sure that you charge the battery in a LiPo-safe bag. If you have any reason to suspect that the battery is damaged do **NOT** use it!
 

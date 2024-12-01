@@ -1,7 +1,8 @@
 ---
 title: Vision
 category: Programming
-position: 6
+sidebar:
+  order: 6
 ---
 Computer Vision allows your robots to understand their environment. For the competition, this is used to locate markers. It will give you information about the type of the marker, the distance/angle to the marker, etc.
 

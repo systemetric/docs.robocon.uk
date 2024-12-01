@@ -1,7 +1,8 @@
 ---
 title: Zones
 category: Programming
-position: 8
+sidebar:
+  order: 8
 ---
 Your code will probably need to look for different markers depending on the zone your robot starts in. Whilst you could have different files for each zone, there's also a property on the robot object for this.
 

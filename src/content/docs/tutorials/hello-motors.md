@@ -1,7 +1,8 @@
 ---
 title: Hello Motors
 category: Tutorials
-position: 4
+sidebar:
+  order: 4
 ---
 # Making The Robot Go
 Your robot is unlikely to score many points if it doesn't go anywhere. This tutorial will show you how to access and turn the motors on your robot.

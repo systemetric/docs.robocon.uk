@@ -1,21 +1,22 @@
 ---
 title: Troubleshooting
 category: Tools
-position: 5
+sidebar:
+  order: 5
 ---
 Here are a few *common* issues you might have and some solutions to them. Student Robotics has a [similar section](https://studentrobotics.org/docs/troubleshooting/) on their website which is also relevant.
-
-## I've connected a battery and the power switch to the black connector but never get any lights on The BrainBox.
-
-Unless the battery is really very low the front led will blink very briefly when the switch is first pressed. If this happens you need to charge the battery. The BrainBox will not switch on at all when the voltage of the battery is very low. If the battery is freshly charged, it's possible that the switch has failed or become internally disconnected. For testing purposes, you can swap the power switch for a single piece of wire. NOTE: at the competition, you must have a red power switch to control your robot as per the rules. Finally - in exceptional circumstances the fuse in the cable may have failed, if this has happened then there must have been some terminal problem internal to the BrainBox - Contact us on robotics@hillsroad.ac.uk for instructions.
 
 ## The BrainBox appears to power up, but I can't connect to the website and the blue LED lights but never starts flashing.
 
 This can happen if erroneous code which does not start with `R = robot.Robot()` is uploaded to The BrainBox. If you think this may have happened, download [this file](/main.py) and place it on a USB stick. Put the USB stick into The BrainBox and turn the robot on normally. Wait 5 minutes, if you do not at this point get the flashing blue light, please contact us!
 
-:::warning
+:::caution
 Using this file will overwrite the current robot code. It will not touch any files you have stored in the editor.
 :::
+
+## I've connected a battery and the power switch to the black connector but never get any lights on The BrainBox.
+
+Unless the battery is really very low the front led will blink very briefly when the switch is first pressed. If this happens you need to charge the battery. The BrainBox will not switch on at all when the voltage of the battery is very low. If the battery is freshly charged, it's possible that the switch has failed or become internally disconnected. For testing purposes, you can swap the power switch for a single piece of wire. NOTE: at the competition, you must have a red power switch to control your robot as per the rules. Finally - in exceptional circumstances the fuse in the cable may have failed, if this has happened then there must have been some terminal problem internal to the BrainBox - Contact us on robotics@hillsroad.ac.uk for instructions.
 
 ## The BrainBox appears to power up, the blue LED light flashes but I cannot connect to it using the WiFi.
 

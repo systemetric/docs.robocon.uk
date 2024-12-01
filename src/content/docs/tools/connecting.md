@@ -1,7 +1,8 @@
 ---
 title: Connecting
 category: Tools
-position: 1
+sidebar:
+  order: 1
 ---
 1. Turn on the robot by following the instructions [here](/tutorials/turning-everything-on.md).
 1. Turn on your computer and wait until you reach the Windows desktop.

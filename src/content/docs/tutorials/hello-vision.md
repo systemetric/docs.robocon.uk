@@ -1,7 +1,8 @@
 ---
 title: Hello Vision
 category: Tutorials
-position: 3
+sidebar:
+  order: 3
 ---
 Your robot can use its camera to see markers to identify tokens and walls. This tutorial will help you make a program that makes the robot output the number of cubes it can see.
 

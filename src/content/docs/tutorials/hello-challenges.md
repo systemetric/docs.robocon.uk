@@ -1,7 +1,8 @@
 ---
 title: Hello Challenges
 category: Tutorials
-position: 7
+sidebar:
+  order: 7
 ---
 The following are challenges for you to attempt and might give you a some help for the competition...
 

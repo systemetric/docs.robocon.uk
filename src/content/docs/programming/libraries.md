@@ -1,7 +1,8 @@
 ---
 title: Libraries
 category: Programming
-position: 9
+sidebar:
+  order: 9
 ---
 :::tip
   If you wish to use a library that is not on the list, please contact us. 
@@ -30,6 +31,6 @@ position: 9
 | [spidev](https://www.sigmdel.ca/michel/ha/rpi/dnld/draft_spidev_doc.pdf)     | 3.5     |
 | [wiringpi](http://wiringpi.com/reference/)    | 2.60.1  |
 
-:::warning
+:::caution
 documentation might not align with used version, please verify documentation is set to the specified version as that is what is installed on the robot
 :::

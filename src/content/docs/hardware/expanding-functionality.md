@@ -1,10 +1,11 @@
 ---
 title: Expanding Functionality
 category: Hardware
-position: 5
+sidebar:
+  order: 5
 ---
 
-:::warning
+:::caution
 Although the I2C and UART are connected to the Raspberry Pi, they operate at 5.1V not 3.3V. Check that your devices are compatible first!
 :::
 
@@ -12,7 +13,7 @@ Although the I2C and UART are connected to the Raspberry Pi, they operate at 5.1
 
 I2C is a great way to a components to your BrainBox. Look at the datasheet for your device which you would like to connect and connect the SDA and SDL to the appropriate pins. You should now be able to send data to your device by using the [SMBus2 python library](https://pypi.org/project/smbus2/).
 
-:::warning
+:::caution
 You should avoid address 0x08 (8) and 0x68 (104) because these are used by critical system components.
 :::
 

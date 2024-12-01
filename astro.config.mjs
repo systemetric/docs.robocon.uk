@@ -7,6 +7,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
     integrations: [starlight({
         title: 'RoboCon Docs',
+        favicon: './src/assets/favicon.png',
         social: {
             instagram: 'https://www.instagram.com/hillsroadrobocon/',
             twitter: 'https://twitter.com/HRobocon/',

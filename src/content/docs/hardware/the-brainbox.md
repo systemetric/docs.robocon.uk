@@ -1,11 +1,16 @@
 ---
 title: The BrainBox
 category: Hardware
-position: 2
+sidebar:
+  order: 2
 ---
-The BrainBox is the center of the kit, it controls power, provides you with useful electronics and is where your code runs. Do **NOT** open the BrainBox unless given written permission by Hills Road RoboCon.
+The BrainBox is the center of the kit, it controls power, provides you with useful electronics and is where your code runs.
 
 ![The brain box](/images/brainbox.jpg)
+
+:::danger
+Do **NOT** open the BrainBox unless given written permission by Hills Road RoboCon.
+:::
 
 ## Power
 
@@ -29,7 +34,7 @@ Powering on the BrainBox: 
 
 <!--EndFragment-->
 
-### C﻿onnecting to the BrainBox and setting up code:
+### Connecting to the BrainBox and setting up code:
 
 Now that the brainbox is powered on, turn on your laptop and open the User account. 
 
@@ -68,7 +73,7 @@ All of the BrainBox's GPIO pins are connected in-series with a 1K Ohm resistor, 
 
 Nominally they operate at 5V but depending on your load the true output will vary. You can calculate the voltage you will get across your load by measuring its resistance, then doing the sum:
 
-(5*Load_resistance)/(Load_resistance+1000)   
+`(5*Load_resistance)/(Load_resistance+1000)`   
 
 ### GPIO - In
 

@@ -1,7 +1,8 @@
 ---
 title: Turning everything on
 category: Tutorials
-position: 1
+sidebar:
+  order: 1
 ---
 ## The BrainBox
 
@@ -15,6 +16,6 @@ Pressing the start button will cause the blue status LED on the front of the Bra
 
 When you are done for the day, press the power button, the status LED will flash rapidly, when this turns of you may unplug the battery.
 
-:::warning
+:::caution
 Unplugging the battery before the status LED turns off will cause the Pi to lose power before it has finished shutting down which could permanently damage its sd card. **Always** wait till all the lights turn off before unplugging power.
 :::  
