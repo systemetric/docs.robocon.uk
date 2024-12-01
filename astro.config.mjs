@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-
 import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
@@ -35,11 +34,15 @@ export default defineConfig({
                 autogenerate: { directory: 'tutorials' },
             },
         ],
+        components: {
+            SiteTitle: './src/components/RoboConDocsLogo.astro',
+          },
         customCss: [
                 // Fonts
                 '@fontsource/space-mono/400.css',
                 '@fontsource/rubik-mono-one/400.css',
                 '@fontsource/lexend/400.css',
+                '@fontsource/fugaz-one/400.css',
                 // Path to your Tailwind base styles:
                 './src/styling.css',
             ],
