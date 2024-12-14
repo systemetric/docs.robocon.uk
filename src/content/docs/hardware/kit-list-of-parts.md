@@ -1,7 +1,8 @@
 ---
 title: Kit List of Parts
 category: Hardware
-position: 3
+sidebar:
+  order: 1
 ---
 ## The RoboCon kit
 We hope that the RoboCon kit was useful to you, we ask that all kits are returned to us over the summer so that we can improve them and keep this competition free for years to come.
@@ -17,6 +18,7 @@ Shipping can sometimes be quite rough for the kit and so we require the followin
 If you plan to return the kit to Hills Road in person then please email [robotics@hrsfc.ac.uk](robotics@hrsfc.ac.uk) and we will organise a time to have someone meet you at reception.
 
 ## Items to be returned:
+
 ### Containers:
 *  1 x 12L Really Useful Box
 ## Electronics Kit:

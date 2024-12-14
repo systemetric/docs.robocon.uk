@@ -1,15 +1,14 @@
 ---
 title: Motors
 category: Programming
-position: 3
+sidebar:
+  order: 3
 ---
-# Motors
-
 Motors can be used for all sorts of things, besides just moving your robot. For instance, they could also be used as part of a mechanism to collect cubes. However you decide to use them, they're really simple to control.
 
 When you control motors, you can choose how much power you want to give them. This is expressed as a percentage, so 0% means a stopped motor and 100% means a motor at full power.
 
-:::tip
+:::note
 If you have large motors you should avoid using 100% power when the motor is stalled or stationary, otherwise the rush of current may cause the robot to shut down the motor output. Instead of jumping from 0% to 100% start at a lower value such as 50% and work your way up.
 :::
 
@@ -50,7 +49,7 @@ R.motors[1] = 0
 R.motors[2] = 0
 ```
 
-:::tip
+:::tip[Need a power boost?]
 By default the BrainBox is designed to work safely with the TT motors supplied, these are 6V motors. If you choose to use motors that have a diffrent nominal voltage, then you can specify this when initalising the robot object. For example when using 9V motors:
 
 ```python

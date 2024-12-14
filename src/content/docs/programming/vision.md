@@ -1,11 +1,9 @@
 ---
 title: Vision
 category: Programming
-position: 6
+sidebar:
+  order: 6
 ---
-
-# Vision
-
 Computer Vision allows your robots to understand their environment. For the competition, this is used to locate markers. It will give you information about the type of the marker, the distance/angle to the marker, etc.
 
 ## Python
@@ -75,7 +73,7 @@ Here's an example of a Blockly program that does some basic vision:
 
 ## Example
 
-After reading the [motors documentation](docs/motors) you should be able to create a function which moves your robot by a number of meters as well as turn. We can then use this to write some code where a robot:
+After reading the [motors documentation](/programming/motors) you should be able to create a function which moves your robot by a number of meters as well as turn. We can then use this to write some code where a robot:
 
 - Looks for a marker
 - If it can see a marker:

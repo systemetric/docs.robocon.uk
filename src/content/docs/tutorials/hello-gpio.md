@@ -1,10 +1,9 @@
 ---
 title: Hello GPIO
 category: Tutorials
-position: 5
+sidebar:
+  order: 5
 ---
-# GPIO
-
 GPIO, or General Purpose Input Output, is the main way you'll interface with simple or obscure bits of hardware. This tutorial will introduce the GPIO system and how to use it.
 
 ## GPIO Pins
@@ -50,7 +49,7 @@ while True:
     time.sleep(0.1)
 ```
 
-Try making a light turn on or off depending on if a button is pressed. An explaination of why it is needed to use `INPUT_PULLUP` can be found in the [GPIO documentation](/docs/gpio#pull-ups).
+Try making a light turn on or off depending on if a button is pressed. An explaination of why it is needed to use `INPUT_PULLUP` can be found in the [GPIO documentation](/programming/gpio#pull-ups).
 
 ## Potentiometers
 

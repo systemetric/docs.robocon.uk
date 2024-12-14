@@ -1,10 +1,9 @@
 ---
 title: Hello Challenges
 category: Tutorials
-position: 7
+sidebar:
+  order: 7
 ---
-# Challenges
-
 The following are challenges for you to attempt and might give you a some help for the competition...
 
 1. Create a program that turns a LED on when a button is pressed.
