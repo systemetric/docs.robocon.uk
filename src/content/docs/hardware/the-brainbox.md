@@ -53,7 +53,7 @@ Now that the brainbox is powered on, turn on your laptop and open the User accou
 
 ## Motors & 12V Power
 
-The specifications for the motor board can be found [here](/CytronBoardDocs.pdf), however to summarize:
+The specifications for the motor board can be found [here](/assets/CytronBoardDocs.pdf), however to summarize:
 
 | Condition per channel     | Maximum Value |
 | ------------------------- | ------------- |
@@ -127,6 +127,10 @@ For expansion please see the [expansion page](/hardware/expanding-functionality)
 
 ## Minibot Assembly
 
-You can download instructions on how  to make your minibot [here](/HowToAssembleYourMiniBot.pdf).
+You can download instructions on how  to make your minibot [here](/assets/MiniBot-Assembly-Instructions.pdf).
+
+::note
+Instead of a castor wheel, your kit contains a small smooth multicoloured 3D block. This can be used as a castor instead - it attaches with the screws provided in your kit.
+:::
 
 <!--EndFragment-->

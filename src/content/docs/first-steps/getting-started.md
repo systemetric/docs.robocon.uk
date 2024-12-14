@@ -6,7 +6,7 @@ sidebar:
 ---
 Welcome to the docs for **Robocon 2025**!
 
-![RoboCon2025 Game Header](/public/images/RoboCon2025-Header.png)
+![RoboCon2025 Game Header](/images/RoboCon2025-Header.png)
 
 If you haven't already, it's a good idea to take a look at the [rules](/rulebook.pdf) for this year's competition.
 
