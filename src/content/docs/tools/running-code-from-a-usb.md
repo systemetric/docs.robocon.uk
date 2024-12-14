@@ -14,7 +14,7 @@ The BrainBox only checks for the presence of USB sticks at boot, only plug and u
 During the competition we need to have unrestricted access to at least one USB port, if you want to use a USB stick during the competition it must leave enough space around at least one port to insert our low profile arena stick.
 :::
 
-## Running your code from a USB :
+## Running your code from a USB
 
 When started, using the start button the robot will default to running the last piece of code written in the editor. In some cases at the competition it can be useful to be able to run code from a USB stick.
 

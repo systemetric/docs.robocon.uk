@@ -17,26 +17,27 @@ Shipping can sometimes be quite rough for the kit and so we require the followin
 
 If you plan to return the kit to Hills Road in person then please email [robotics@hrsfc.ac.uk](robotics@hrsfc.ac.uk) and we will organise a time to have someone meet you at reception.
 
-## Items to be returned:
+## Items to be returned
 
-### Containers:
+### Containers
 *  1 x 12L Really Useful Box
-## Electronics Kit:
+## Electronics Kit
 *  1 BrainBox
 *  1 microservo 9g SG90
 *  1 6 pin GPIO connector
 *  1 2 pin 12V connector
-### Switches:
+### Switches
 *  Red switch, black connector: ON/OFF (latching)
 *  Black switch, green connector: Start (momentary)
-### Batteries:
+### Batteries
 *  2 x 12 V LiPo Battery
 *  1 x Turnigy E3 Compact 2S/3S Lipo Charger
 *  1 x Lithium Polymer Charge Pack
-### Computer:
+### Computer
 *  1 Tablet computer
 *  1 Charging brick
 *  1 Kettle lead
-### Note
-Please return any surviving parts of the minibot
 
+:::note
+Please return any surviving parts of the minibot
+:::

@@ -6,7 +6,7 @@ sidebar:
 ---
 Every time the robot takes a picture it is updated on the web interface, during development it is occasionally useful to be able to also keep a log of pictures that have been analysed to check the camera focus, motion blur etc.
 
-## Gathering Data:
+## Gathering Data
 
 1. Add a file with the name "collect_images.txt" to the USB stick to collect the images
 2. Add a file with the name "log_markers.txt" to the USB stick to collect analysis of images

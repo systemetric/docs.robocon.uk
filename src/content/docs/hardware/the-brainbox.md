@@ -34,7 +34,7 @@ Powering on the BrainBox: 
 
 <!--EndFragment-->
 
-### Connecting to the BrainBox and setting up code:
+### Connecting to the BrainBox and setting up code
 
 Now that the brainbox is powered on, turn on your laptop and open the User account. 
 

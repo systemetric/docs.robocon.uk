@@ -41,6 +41,3 @@ Handling batteries incorrectly can be dangerous. Make sure you follow these [saf
 :::tip
 You can also access these docs from your robot. Go to <http://robot.go/docs> when you're connected to your robot.
 :::
-
-
-<!--END_PI_REMOVE-->
