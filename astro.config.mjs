@@ -15,8 +15,8 @@ export default defineConfig({
         },
         sidebar: [
             {
-                label: 'Getting Started',
-                autogenerate: { directory: 'getting-started' },
+                label: 'First Steps',
+                autogenerate: { directory: 'first-steps' },
             },
             {
                 label: 'Hardware',
