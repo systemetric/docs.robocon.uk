@@ -1,11 +1,9 @@
 # The RoboCon Docs
 Hosted on the subdomain https://docs.robocon.uk
 
-Built with the Starlight docs framework, on Astro. Tailwind is installed.
+Built with the Starlight docs framework, on Astro. 
 
-If you are wondering how something works, look at the Starlight docs first before you look at the Astro ones - the functionality is slightly different!
-
-Fonts are installed via Fontsource.
+If you've done Node stuff before and want to contribute, then jump down to the `More Advanced...` section for the important nitty gritty details, otherwise read away... I've explained the editing process :)
 
 ## Issues
 
@@ -33,9 +31,11 @@ General site settings (e.g. headers and footers) are editable in `astro.config.m
 ### More Advanced...
 If you want to do more, then you can refer to the docs linked below!
 
-This site was built with Starlight, which is an extension of Astro. See [Starlight docs](https://starlight.astro.build/guides/authoring-content/).
+This site was built with Starlight, which is an extension of Astro. See [Starlight docs](https://starlight.astro.build/guides/authoring-content/). Starlight varies in functionality a fair bit from some parts of Astro, so always **read the Starlight docs first** before checking the Astro ones.
 
 Yes, we have Tailwind installed.
 
-### I've finished editing - contributie time!
+Fonts are installed via Fontsource (`npm install @fontsource/roboto` to add the Roboto font. Fontsource understands Google Fonts). Fonts must be defined in the `astro.config.mjs` file and used in the `tailwind.config.mjs` file. You must edit both when adding or removing a font.
+
+### I've finished editing - contribute time!
 Simply create an aptly named branch, commit your changes there, and open a Pull Request!
