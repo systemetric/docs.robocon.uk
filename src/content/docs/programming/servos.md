@@ -19,9 +19,11 @@ R.servos[0].mode = robot.PWM_SERVO
 R.servos[0] = 50
 ```
 
-To control servo 3 instead, replace `servos[0]` with `servos[3]`. Again, remember that indexes start at 0.
+:::tip
+For example, to control servo 3 instead, replace `servos[0]` with `servos[3]`. Again, remember that indexes start at 0.
+:::
 
-Here's a more complete example:
+Here's a more complete example, controlling servos 0 and 1:
 
 ```python
 import robot
