@@ -10,7 +10,7 @@ Your robot can use its camera to see markers to identify tokens and walls. This 
 
 Create a new script called "VisionTest".
 
-Unlike in the previous tutorial, [Hello World](/tutorials/hello-world), we are going to use functions written specifically for the robot.  To do this we will need to initialise the robot:
+Unlike in the previous tutorial, [Hello World](/challenges/hello-world), the use of the first couple lines of code is important here. So let's break them down:
 
 ```python
 import robot
@@ -19,7 +19,7 @@ R = robot.Robot()
 
 This creates a "Robot" object, and places it inside the variable "R". This allows us to use robot functions through the R variable, such as `R.See()`. If you are using Blockly, the robot is initialised automatically.
 
-[Here](https://www.makeuseof.com/tag/object-oriented-programming-explained/) is a basic introduction into what Object Oriented Programing is.
+[Here](https://www.makeuseof.com/tag/object-oriented-programming-explained/) is a basic introduction into what Object Oriented Programming is.
 
 ## Counting Markers
 
@@ -43,18 +43,26 @@ The complete code is as follows:
 
 ```python
 import robot
+import time
 R = robot.Robot()
 
 while True:
     markers = R.see()
     print(len(markers))
+    time.sleep(2)
 ```
+
+You'll notice some new lines we snuck in there - an `import time` and a `time.sleep(2)`. The first of these adds another toolset to our code, the `time` library. This most notably adds the sleep function we used just now, which pauses the code's execution for the number of seconds specified - in this case two. 
+
+:::tip
+The camera takes a moment to process the images it takes. While you can run it without any delay in the loop, this can lead to some buggy behaviour, and will act more like running every 0.6 or so seconds. In general, adding a `sleep()` gives you more control over what your robot is doing.
+:::
 
 ## Running the code
 
 Place a few markers infront of the camera on the robot about 10-20cm away and run the code. In the logs the number of markers visible will be outputted, and in addition to the logs, the raw images taken by the camera can be seen, which can be useful for working out if something is blocking the camera.
 
-# Troubleshooting and Further Reading
+## Troubleshooting and Further Reading
 
 [Connecting to the robot](/tools/connecting) <br>
 [Initalising the robot](/programming/init-robot)<br>
