@@ -54,7 +54,7 @@ Calling `R.see()` at a high rate (with a sleep of less than 2 seconds between ea
 
 ## Can you post a kit to or from Hills Road
 
-We can post kits from Hills Road however you will need to cover the costs of shipping. To return kits, see [Kit List of Parts](/hardware/kit-list-of-parts) 
+We can post kits from Hills Road however you will need to cover the costs of shipping. To return kits, see [Kit List of Parts](/hardware/kit-list-of-parts).
 
 ## What is the patch and how do I install it?
 

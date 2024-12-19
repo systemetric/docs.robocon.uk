@@ -10,7 +10,7 @@ Your robot can use its camera to see markers to identify tokens and walls. This 
 
 Create a new script called "VisionTest".
 
-Unlike in the previous tutorial, [Hello World](/challenges/hello-world), the use of the first couple lines of code is important here. So let's break them down:
+Unlike in the previous tutorial, [Hello World](/tutorials/hello-world), the use of the first couple lines of code is important here. So let's break them down:
 
 ```python
 import robot

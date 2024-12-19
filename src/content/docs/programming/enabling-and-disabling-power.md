@@ -1,5 +1,5 @@
 ---
-title: Toggling 12v and5v power
+title: Toggling 12v and 5v power
 category: Programming
 sidebar:
     order: 10

@@ -8,7 +8,7 @@ The BrainBox is the core of the kit which we provide. In it is all of the electr
 
 ![Diagram showing the pinout of the top of the BrainBox](/images/BrainBox%20power%20input%20side%20profile%20labelled.png)
 
-Pressing the start button will cause the blue status LED on the front of the BrainBox to turn on. When the light starts flashing your BrainBox is ready to run code. You can now turn on your tablet by pressing the power button on the left-hand side and [connect to your robot](/connecting.md). The status LED will go solid while code is running.
+Pressing the start button will cause the blue status LED on the front of the BrainBox to turn on. When the light starts flashing your BrainBox is ready to run code. You can now turn on your tablet by pressing the power button on the left-hand side and [connect to your robot](/tools/connecting). The status LED will go solid while code is running.
 
 # How to turn everything off
 
