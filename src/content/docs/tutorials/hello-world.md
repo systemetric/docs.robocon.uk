@@ -30,17 +30,22 @@ There are two ways to go about writing code for the robot:<br>
 1. Python - The main language used to program robots with the BrainBox.<br>
 2. Blockly - A Scratch-like language that allows you to write programs connecting blocks. This will automatically produce a python script that can be run in the robot.
 
-Both can be used to program a winning robot for the competition and it is up to you which one you develop your robot with. However for the following tutorials python will be used.
+Both can be used to program a winning robot for the competition and it is up to you which one you develop your robot with. However for the following tutorials, Python will be used.
 
 Details on both these methods can be found in the programming section of the documentation.
 
-If you are running into problems using the editor its functionality is documented [here](/tools/editor#the-editor-interface).
+If you are running into problems using the editor, more details can be found [here](/tools/editor).
 
-1. In the editor window write:
+In the editor window write:
 
 ```python
-print("Hello world!")
+import robot
+
+R = robot.Robot()
+
+print("Hello World!")
 ```
+You don't need to know much about what the first couple lines do - they are covered in later chapters, and do setup for the robot to be able to run. The important bit for you to understand is the last bit - the `print()` statement.
 
 ## Running the code
 
@@ -48,9 +53,9 @@ Click on the green run button in the top right corner:
 
 ![Run Button](/images/editor-robot-run.png)
 
-The logs should then appear with a friendly "Hello world!"
+The logs should then appear with a friendly "Hello World!"
 
-# Troubleshooting and Further Reading
+## Troubleshooting and Further Reading
 
 [Connecting to the robot](/tools/connecting) <br>
 [Uploading and running code](/tools/uploading) <br>

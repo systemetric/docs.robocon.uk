@@ -4,52 +4,16 @@ category: Hardware
 sidebar:
   order: 2
 ---
-The BrainBox is the center of the kit, it controls power, provides you with useful electronics and is where your code runs.
 
-![The brain box](/images/brainbox.jpg)
-
-:::danger
-Do **NOT** open the BrainBox unless given written permission by Hills Road RoboCon.
-:::
-
+The BrainBox is the core of the kit which we provide. In it is all of the electronics and software you need to power a robot. Lets start by turning it on. Take a battery from the kit and plug it into the yellow socket labelled battery, then take a red "power button" and connect that to the black connector along the side of the BrainBox. The battery and start button are both labelled on the red surface of the BrainBox. 
+![The brain box](/images/angled.png)
+## How to turn everything on
+Pressing the start button will cause the battery status LEDs on the front of the BrainBox flash in an upwards direction and the power LED turns green. When the user light starts flashing blue your BrainBox is ready to run code. You can now turn connect to your robot. The user LED will go solid while code is running. 
 ## Power
 
 The BrainBox distributes power to the robot from the battery. It provides both 12V and 5V power out. All power must go through the BrainBox and the fuse should never be replaced.
 
-The On|Off switch also plugs into the BrainBox as well as the Start button which is used to start your robot code running.
-
-<!--StartFragment-->
-
-### **In order to attach a battery to the BrainBox:** 
-
-1. Make sure it is disconnected from its charger. 
-2. Plug the yellow (XT60) connector into the corresponding socket on the brainbox (the socket should also be yellow) 
-
-Powering on the BrainBox: 
-
-1. Find your provided power switch. 
-2. Plug the black connector end into the black socket labelled “Power Switch” on the BrainBox. (See diagram for details) 
-3. Press the power switch button. The status indicators on the battery should turn on. 
-4. Wait for these to stop flashing. Your BrainBox is now powered on!
-
-<!--EndFragment-->
-
-### Connecting to the BrainBox and setting up code
-
-Now that the brainbox is powered on, turn on your laptop and open the User account. 
-
-1. Open the Wi-Fi menu. You should see a network called “RoboCon\[Current Year]-Team\[Team No.]”, for example, RoboCon1234-Team1
-   The team number should match the number on the laptop.
-2. Select this network. When prompted for a password, enter the one found on the bottom of the BrainBox.
-3. Navigate to the web address found on the BrainBox.
-4. You should be given options for Rules, Editor, Docs, and Run. 
-   a.	Rules will contain a copy of the competition’s rules.
-   b.	Editor will allow you access to the code on the robot.
-   c.	Docs will contain the documentation for the code.
-   d.	Run will run the currently loaded .py script on the robot.
-5. Navigate to the Editor window. It should look as below.
-
-   ![Look Like This](/images/picture2.jpg "Editing Window")
+The On/Off switch also plugs into the BrainBox as well as the Start button which is used to start your robot code running.
 
 ## Motors & 12V Power
 
@@ -65,6 +29,12 @@ The specifications for the motor board can be found [here](/assets/CytronBoardDo
 You can toggle the 12V which allows you to turn 12V devices on and off easily. However, this will also cut power to the motor board.
 :::
 
+## How to turn everything off
+When you are done for the day, press the power button, the user LED will flash rapidly, when this turns off you may unplug the battery. 
+
+## USB's
+On the new brainBox, there is only one USB port. If you want to use something that requires a USB port such as a USB camera, you will need to get your own USB hub.  
+ 
 ## GPIO
 
 ### GPIO - Out
@@ -73,7 +43,7 @@ All of the BrainBox's GPIO pins are connected in-series with a 1K Ohm resistor, 
 
 Nominally they operate at 5V but depending on your load the true output will vary. You can calculate the voltage you will get across your load by measuring its resistance, then doing the sum:
 
-`(5*Load_resistance)/(Load_resistance+1000)`   
+(5*Load_resistance)/(Load_resistance+1000)   
 
 ### GPIO - In
 
@@ -103,34 +73,19 @@ The PWM pins ranges:
 
 ## Pin Out
 
-### USB's
+### IO
 
-![USB's](/images/brainboxdocsusb.png)
+![USB's](/images/powerconnector.png)
 
 ### Motors
 
-![Motors](/images/brainboxdocsmotors.png)
+![Motors](/images/brainboxmotors.png)
 
-### GPIO
-
-![GPIO](/images/brainboxdocsgpio.png)
 
 ### Front
 
-![Front](/images/brainboxdocfront.png)
+![Front](/images/redpanel.png)
 
 ## Expansion I2C, UART & USB
 
 For expansion please see the [expansion page](/hardware/expanding-functionality).
-
-<!--StartFragment-->
-
-## Minibot Assembly
-
-You can download instructions on how  to make your minibot [here](/assets/MiniBot-Assembly-Instructions.pdf).
-
-::note
-Instead of a castor wheel, your kit contains a small smooth multicoloured 3D block. This can be used as a castor instead - it attaches with the screws provided in your kit.
-:::
-
-<!--EndFragment-->

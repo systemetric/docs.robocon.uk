@@ -12,10 +12,10 @@ Your code will probably need to look for different markers depending on the zone
 
 | **Team** | **Code** |
 | --- | --- |
-| Leon | `robot.TEAM.LEON` |
-| Zhora | `robot.TEAM.ZHORA` |
-| Pris | `robot.TEAM.PRIS` |
-| Roy | `robot.TEAM.ROY` |
+| Ruby | `robot.TEAM.RUBY` |
+| Jade | `robot.TEAM.JADE` |
+| Topaz | `robot.TEAM.TOPAZ` |
+| Diamond | `robot.TEAM.DIAMOND` |
 Here's an example:
 
 ```python
@@ -23,11 +23,13 @@ import robot
 
 R = robot.Robot()
 
-if R.zone == robot.TEAM.LEON:
+if R.zone == robot.TEAM.RUBY:
     print("Do something!")
 else:
     print("Do something else!")
 ```
+
+This code checks if the first marker in the list belongs to the current robot.
 
 ## Blockly
 

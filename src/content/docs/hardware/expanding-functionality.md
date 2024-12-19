@@ -21,12 +21,12 @@ If you are interested in the I2C protocol there is a good guide to find out more
 
 ## USB
 
-You can use USB devices using the [`serial`](https://pyserial.readthedocs.io/en/latest/shortintro) library. The connection will probably open on something similar to `dev/ttyUSB0` but if you can't find it where you expect then connect the device to a Raspberry Pi running a recent OS image and observe where it appears.
+You can use USB devices using the [`serial`](https://pyserial.readthedocs.io/en/latest/shortintro.html) library. The connection will probably open on something similar to `dev/ttyUSB0` but if you can't find it where you expect then connect the device to a Raspberry Pi running a recent OS image and observe where it appears.
 
 ## UART
 
 UART is not enabled by default on the BrainBox and you will need to ask on the forums for us to provide a patch to enable it should you wish to use it.
 
-:::tip
-Please contact us for more infomation if you wish to expand your BrainBox. 
+:::note
+Please [contact us](mailto:robotics@hrsfc.ac.uk) for more infomation if you wish to expand your BrainBox. 
 :::

@@ -14,16 +14,15 @@ Your kit will come with several pieces of battery-related equipment:
 * One battery charger.
 * One battery charging bag.
 
-You must not use any batteries, chargers, bags or cables **not** explicitly authorised by **Hills Road RoboCon**. If you have any doubts or wish to request permission to use a battery, charger, charging bag or battery cable not provided by **Hills Road RoboCon**, please contact [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk).
+You must not use any batteries, chargers, bags or cables **not** explicitly authorised by **Hills Road RoboCon**. If you have any doubts or wish to request permission to use a battery, charger, charging bag or battery cable not provided by **Hills Road RoboCon**, please email us at [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk).
 
-:::caution
-
+## Battery Safety
+:::caution[Battery Safety Instructions]
 * Never leave batteries unattended when they are in use or charging.
 * Always place the batteries in the provided charging bag when charging or storing.
 * Do not charge or use a damaged battery.
 * Do not tamper with the battery wires.
-* If a battery has any cuts, nicks, exposed copper on wires or is bulging, contact [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk) immediately.
-
+* If a battery has any cuts, nicks, exposed copper on wires or is bulging, [contact us](mailto:robotics@hrsfc.ac.uk) immediately.
 :::
 
 ## Storing
@@ -36,12 +35,10 @@ If you are not going to use the batteries for a long period of time, such as mor
 
 To use your batteries, you must connect them to the **Hills Road RoboCon** BrainBox. Do not tamper with the cable or connect the batteries to anything other than the power board (or the charger when charging).
 
-During operation, the battery is protected by over-current protection by a regulator on the power board. If any equipment is short circuited, the over-current protection will activate - protecting the battery. There is a fuse placed inline with the power cord. If you suspect the fuse has gone something *very* wrong has happened. This is an important safety feature.
+During operation, the battery is protected by over-current protection by a regulator on the power board. If any equipment is short circuited, the over-current protection will activate - protecting the battery. There is a fuse placed inline with the power cord. If you suspect the fuse has gone something _very_ wrong has happened. This is an important safety feature.
 
 :::danger
-
-Do **NOT**, under any circumstances, bypass or replace the fuse. If the fuse has blown then the power board has failed and **must** be replaced for safe operation. If you suspect the fuse has blown then please contact [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk) straight away.
-
+Do **NOT**, under any circumstances, bypass or replace the fuse. If the fuse has blown then the power board has failed and **must** be replaced for safe operation. If you suspect the fuse has blown then please contact <mailto:robotics@hrsfc.ac.uk> straight away.
 :::
 
 Mechanical damage to a battery can be dangerous, and a puncture or large force applied to a battery causes a serious risk of fire. To avoid this, your battery should be shielded from mechanical damage while you operate it. Secure your battery to your robot, so that it does not move or fall off while the robot moves. You should also build a compartment for the battery to be placed in to prevent accidental collisions damaging the battery.
@@ -55,17 +52,3 @@ Do not store a discharged battery for more than a few days without charging it, 
 ## Charging batteries
 
 You should only use the battery charger provided by **Hills Road RoboCon** to charge the batteries provided in the kit. Plug your battery in and put it in a LiPo safe bag until all the lights turn green.
-
-The exact charger you have will vary, however the one you have should look a bit like this one: 
-
-![A charger](/images/charger.png)
-
-To charge the battery find an adapter and plug the charger into the mains. All three LED's should light up red. Take the battery and place it in the LiPo-safe bag so that only the leads protrude then take the four pin lead from the battery. Then plug that into the four pin connector on the charger, noting the direction they are keyed in.
-
-:::caution
-
-Always make sure that you charge the battery in a LiPo-safe bag. If you have any reason to suspect that the battery is damaged do **NOT** use it!
-
-:::
-
-When the battery is charged all 3 LED's will turn green, if the LED's flash red it means that there is a problem with your battery and you should **CONTACT US** immediately.

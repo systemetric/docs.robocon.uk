@@ -4,9 +4,8 @@ category: Programming
 sidebar:
   order: 9
 ---
-:::tip
-  If you wish to use a library that is not on the list, please contact us. 
-  `pip install package` will not work on your robot!
+:::note
+  If you wish to use a library that is not on the list, please [contact us](mailto:robotics@hrsfc.ac.uk).
 :::
 
 ### the following libraries are installed on your robot.
@@ -14,7 +13,7 @@ sidebar:
 |-------------|---------|
 | [chardet](https://chardet.readthedocs.io/en/latest/)    | 2018.8.24 |
 | [entrypoints](https://entrypoints.readthedocs.io/en/latest/) | 0.3     |
-| [gevent](https://www.gevent.org/contents)   | 21.8.0  |
+| [gevent](https://www.gevent.org/contents.html)   | 21.8.0  |
 | [gpiozero](https://gpiozero.readthedocs.io/en/latest/)   | 1.6.2   |
 | [greenlet](https://greenlet.readthedocs.io/en/latest/)    | 1.1.1   |
 | [keyrings](https://keyring.readthedocs.io/en/latest/)    | 17.1.1  |
@@ -31,6 +30,6 @@ sidebar:
 | [spidev](https://www.sigmdel.ca/michel/ha/rpi/dnld/draft_spidev_doc.pdf)     | 3.5     |
 | [wiringpi](http://wiringpi.com/reference/)    | 2.60.1  |
 
-:::caution
-documentation might not align with used version, please verify documentation is set to the specified version as that is what is installed on the robot
+:::warning
+Documentation might not align with used version, please verify documentation is set to the specified version as that is what is installed on the robot
 :::

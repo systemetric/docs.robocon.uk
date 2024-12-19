@@ -16,11 +16,15 @@ markers = R.see()
 print(markers)
 ```
 
-`markers` is a Python list of `marker objects`. Which looks like a the following:
+`markers` is a Python list of "marker objects", which each look like the following:
 
 ```
-[arena Marker 0: 0.856m @0.754 degrees
+[target Marker 0: 0.856m @0.754 degrees
 {
+  info.type = TARGET
+  info.id = 50
+  info.owning_team = TEAM.RUBY
+  info.target_type = TARGET_TYPE.LAIR
   dist = 0.856
   bearing.y = 0.754
   bearing.x = 1.03e+02
@@ -35,30 +39,42 @@ print(markers)
 
 Full reference of the properties are further below but some useful properties are:
 
-| Property           | Description                                                        |
-| ------------------ | ------------------------------------------------------------------ |
-| `marker.dist`      | Distance to the marker in metres                                   |
-| `marker.bearing.y` | The angle your robot needs to turn to get to the marker in degrees |
-| `marker.info.id`   | Numeric code of the marker                                         |
-| `marker.info.type` | One of `arena` or `cube`                                           |
+| Property                 | Description                                                                       |
+| ------------------------ | --------------------------------------------------------------------------------- |
+| `marker.dist`            | Distance to the marker in metres                                                  |
+| `marker.bearing.y`       | The angle your robot needs to turn to get to the marker in degrees                |
+| `marker.info.id`         | Numeric code of the marker                                                        |
+| `marker.info.type`       | Returns `ARENA` for a wall marker, or `TARGET` for sheep, gems and lair markers.                   |
+| `marker.info.owning_team`| Returns the gem colour of the team that owns the marker. For example, calling this on Smaug's lair marker would return `TEAM.RUBY`. |
+| `marker.info.target_type` | Returns if the marker is a sheep, gem, or lair marker. If it's none of these, `NONE` will be returned. For example, a sheep marker would return `TARGET_TYPE.SHEEP`. |
 
 ## Codes
 
+:::tip
+You do not need to use the marker ids themselves for your calculations. Use `marker.type`, `marker.owning_team` and `marker.target_type` instead to find out the information you need (see above).
+:::
+
+:::tip
+`marker.owning_team` will return the Gem Type of that team, not the team name. For example, for team "Smaug" `marker.owning_team` would return "ruby".
+:::
+
 Every april tag has a code:
 
-- April tags 0-39 will be used for cubes. Although each shepherdess only has 6
-  sheep to find, there are 9 codes allocated to each team. This is to allow us
-  to have spare sheep incase some get damaged during play
+- April tags 0-39 will be used for cubes. Although only 20 are used in each round, there are another 20 spare in case some get damaged.
 
 - April tags 100+ will around the arena on the walls. See the rules for
   specifics on where around the rules they will be placed
 
-| Code     | Team  |
-| -------- | ----- |
-| 0 to 9   | Leon  |
-| 10 to 19 | Zhora |
-| 20 to 29 | Pris  |
-| 30 to 39 | Roy   |
+- You do not need to use the marker numbers, and can instead use marker.type and marker.owning_team
+
+| Function    | Codes  |      |
+| -------- | ----- | ----
+| Arena Marker   | 100 - 123  |  |
+| Ruby | 24, 25 | Lair marker - 50 |
+| Jade | 26, 27 | Lair marker - 51 |
+| Topaz | 28, 29 | Lair marker - 52 |
+| Diamond | 30, 30 | Lair marker - 53 |
+| Sheep | 0 - 23 |
 
 ## Blockly
 
@@ -135,16 +151,14 @@ A `Marker` object contains information about a _detected_ marker. It has the fol
 | `rotation.z`                | The **yaw** of the marker                                                                                                                                                                                                                            |
 | `info`                      | An object with various information about the marker                                                                                                                                                                                                  |
 | `info.id`                   | The ID number of the marker                                                                                                                                                                                                                          |
-| `info.type`                 | The type of marker, one of MARKER_TYPE                                                                                                                                                                                                               |
 | `info.size`                 | The length of the black edge of the marker in meters                                                                                                                                                                                                 |
-| `info.owner`                | Who or what owns the marker, a `MARKER_OWNER`                                                                                                                                                                                                       |
-| `info.type`                 | The type of marker, a `MARKER_TYPE`                                                                                                                                                                                                                  |
-| `info.owning_team`          | Which team owns the marker, a `TEAM`, only set when `info.owner` is not `MARKER_OWNER.ARENA`                                                                                                                                                         |
-| `info.wool_type`            | What type of wool the sheep has, a `WOOL_TYPE`, only set when `info.type` is `MARKER_TYPE.SHEEP`                                                                                                                                                     |
+| `info.type`                 | Returns `ARENA` for a wall marker, or `TARGET` for sheep, gems and lair markers. |
+| `info.owning_team`          | Returns the gem colour of the team that owns the marker. For example, calling this on Smaug's lair marker would return `TEAM.RUBY`.                                                                                                                                                         |
+| `info.target_type`          | Returns if the marker is a sheep, gem, or lair marker. If it's none of these, `NONE` will be returned. For example, a sheep marker would return `TARGET_TYPE.SHEEP`. |
 | `info.bounding_box_colour`  | A tuple describing the colour which is drawn around the marker in the preview image (Blue, Red, Green)                                                                                                                                               |
 | `detection`                 | Technical information which has been inferred from the image.                                                                                                                                                                                        |
 | `detection.tag_family`      | The family of AprilTag which is detected. RoboCon currently only uses `tag36h11`.                                                                                                                                                                    |
-| `detection.tag_id`          | The ID number of the detected marker. Aliased by `marker.code`.                                                                                                                                                                                      |
+| `detection.tag_id`          | The ID number of the detected marker. Aliased by `marker.info.id`.                                                                                                                                                                                      |
 | `detection.hamming`         | The number of bits which were corrected. The detector cannon detect tags with a hamming distance greater than 2.                                                                                                                                     |
 | `detection.decision_margin` | A measure of the quality of the binary decoding process; the average difference between the intensity of a data bit versus the decision threshold. Higher numbers roughly indicate better decodes. Only effective for tags which appear small.       |
 | `detection.homography`      | The 3x3 homography matrix describing the projection from an "ideal" tag (with corners at (-1,1), (1,1), (1,-1), and (-1, -1)) to pixels in the image.                                                                                                |
@@ -163,7 +177,7 @@ no way to know how you've mounted your camera. You may need to account for this.
 :::
 
 :::tip
-You can import `MARKER_OWNER`, `MARKER_TYPE`, `WOOL_TYPE` and `TEAM` from `robot`,   for example...  
+You can use `TARGET_TYPE`, `MARKER_TYPE`, and `TEAM` from `robot`, for example...  
 
 ```python
 import robot
@@ -173,14 +187,13 @@ R = robot.Robot()
 markers = R.see()
 
 for marker in markers:
-    if marker.info.owner == robot.MARKER_OWNER.ARENA:
-        print(f"Marker {marker.info.id} is owned by the arena")
-    elif marker.info.owning_team == R.zone:
+    if marker.info.owning_team == R.zone:
         print(f"I own {marker.info.id}")
+    elif marker.info.type == robot.MARKER_TYPE.TARGET and marker.info.owning_team == robot.TEAM.JADE and marker.info.target_type == robot.TARGET_TYPE.LAIR:
+        print(f"Marker {marker.info.id} is Jade's Lair Marker")
     else:
-        print(f"Marker {marker.info.id} is owned by {marker.info.owning_team}")
+        print(f"Marker {marker.info.id} is owned by {marker.info.owning_team}"")
 ```
-
 :::
 
 ## The `Camera` object
@@ -189,7 +202,7 @@ An interface to the camera is provided incase you want to do additional computer
 
 ### Changing the resolution
 
-The default the camera takes pictures at a resolution of **640x480px**. You can change this by setting the `res` parameter.
+By default the camera takes pictures at a resolution of **640x480px**. You can change this by setting the `res` parameter.
 
 ```python
 import robot
@@ -212,6 +225,9 @@ You must use one of the following resolutions:
 :::tip
 Using a higher resolution will increase the amount of time it takes to process the image, but you may be able to see more. Using a smaller resolution will be faster, but markers further away may stop being visible.
 :::
+:::caution
+The resolution values may be different on a USB camera. Please see [Using USB Cameras](#using-usb-cameras) for more information.
+:::
 
 ### Get data straight from the camera
 
@@ -229,8 +245,13 @@ image.colour_frame # A 3d numpy array of the image data
 image.colour_type # The encoding method used to store the colour_frame defaults to 8 bit RGB.
 image.time # A `datetime` object representing approximately the capture time.
 ```
+## Using USB cameras
 
-### Using USB cameras
+The built-in Pi Camera inside your brain should be great for your robot, however if you would like to use your own USB Camera (perhaps you want to put a camera somewhere else on your robot), you can! 
+
+USB cameras can have slightly different functionality than the built-in Pi Camera, so they'll need some fine tuning before you can use them. The basic steps outlined below should get you up and running.
+
+Please **turn your robot off** before plugging in your USB Camera of choice.
 
 To use a USB camera you will need to initialize the `Robot` with something which inherits from `robot.vision.Camera`. Then just call `R.see()` as you would normally.
 
@@ -243,31 +264,67 @@ R = robot.Robot(camera=RoboConUSBCamera)
 print(R.see())
 ```
 
-You will then need to calibrate your camera as the distance that it reports will not be accurate. You can do this by changing the value in the `R.camera.params` dictionary up or down.
+### Setting the resolution
 
-To get the current value print it:
+You may now wish to change the resolution of your camera, this can be done the same as before with `R.camera.res = (width,height)`.
 
-```python
-print(R.camera.params)
-R.camera.params[(640, 480)] = (123, 123)
+:::note
+Some resolutions may not work with your USB camera, as different cameras support different resolutions. Check your camera's documentation. If you try and use a resolution that your camera doesn't support, you will get an error that will state the closest resolution to the value you attempted to use. Try changing your resolution to the value that the error message suggests!
+:::
+
+For example, to set a USB Camera's resolution to `800x600`:
+
+``` python
+import robot
+from robot.vision import RoboConUSBCamera
+
+R = robot.Robot(camera=RoboConUSBCamera)
+
+R.camera.res = (800, 600)
+print(R.see())
 ```
 
-We recommend that you tune this value by placing a marker exactly 2m away, printing `R.see()` (remember to take an average), and tuning the focal length up or down until you get a value that is close to 2m. If you are feeling fancy you could even write a function to automatically tune the value.
+### Calibrating the camera
 
-Calibration data for a Logitech C270 is available:
+You will then need to calibrate your USB camera as the distance that it reports will not be accurate. You can do this by changing the value in the `R.camera.focal_lengths` dictionary up or down. By default, the robot will use the focal lengths for a "Logitech C270" camera, it's unlikely this is your camera - so see the steps below on how to calibrate it.
 
-```python
-LOGITECH_C270_FOCAL_LENGTHS = {  # fx, fy tuples
-    (640, 480): (607.6669874845361, 607.6669874845361),
-    (1296, 736): (1243.0561163806915, 1243.0561163806915),
-    (1296, 976): (1232.4906991188611, 1232.4906991188611),
-    (1920, 1088): (3142.634753484673, 3142.634753484673),
-    (1920, 1440): (1816.5165227051677, 1816.5165227051677)
-}
+:::tip
+Remember that focal lengths vary for different resolutions. You will need to run the calibration code below to find the focal length for each resolution you intend to use with your USB camera.
+:::
+
+- Place a marker exactly 1m away from the camera (measure this distance). Make sure there are no other markers in sight of the camera.
+- Copy and paste the following code into your editor. Please set the `resolution` value to a resolution you wish to use.
+
+``` python
+import robot
+from robot.vision import RoboConUSBCamera
+R = robot.Robot(camera=RoboConUSBCamera)
+
+resolution = (640, 480)
+
+R.camera.focal_lengths[resolution] = (120, 120) # set the focal lengths to a known bad value
+R.camera.res = resolution # set resolution
+
+marker = R.see()[0] # get first marker
+d = marker.dist
+focal_length = 120 / d # focal length = focal length / distance
+print("Focal length is around:",focal_length)
+print("Use this in your code to set the correct focal length: R.camera.focal_lengths[resolution] = ("+str(focal_length)+", "+str(focal_length)+")")
 ```
 
-This data can be imported:
+It's worth noting that this is only an average value. 
 
-```python
-from robot.vision import LOGITECH_C270_FOCAL_LENGTHS
+The code above will output a focal length value which you should use **before** setting `R.camera.res` or `R.see()`. You can also copy the line of code it produces and paste that into your code to set the focal lengths.
+
+For example, if your focal length was `123` at the resolution of `800x600`, you should use the following lines of code, in the **same order**:
+
+``` python
+import robot
+from robot.vision import RoboConUSBCamera
+R = robot.Robot(camera=RoboConUSBCamera)
+
+R.camera.focal_lengths[resolution] = (123, 123)
+R.camera.res = resolution
+
+marker = R.see()[0]
 ```
