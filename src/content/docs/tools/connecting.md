@@ -16,5 +16,5 @@ From now on, this will be referred to as the **Shepherd Homepage**.
 
 ## Next Steps
 
- - [Learn to use the editor](/tools/editor.md) right here in the browser!
- - [Troubleshooting](/tools/troubleshooting.md)
+ - [Learn to use the editor](/tools/editor) right here in the browser!
+ - [Troubleshooting](/tools/troubleshooting)
