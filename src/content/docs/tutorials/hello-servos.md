@@ -14,9 +14,13 @@ R = robot.Robot()
 R.servos[0].mode = robot.PWM_SERVO
 
 R.servos[0] = 50
+
+time.sleep(1)
 ```
 
 However, where the value of a motor determines the *speed* it turns, the value of a servo controls the *position* it is at on its rotation, with a range of -100 to 100. Try it out on your robot to see which values correspond to each position!
+
+Servos take a moment to move into their new positions, so it's a good idea to add a delay after setting positions (use `time.sleep`) if it might affect your robot later.
 
 :::tip
 When your robot is turned off, the brain will automatically set all of its servos to the 0 position. Make sure you factor this in when you run your robots!

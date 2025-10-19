@@ -27,6 +27,7 @@ Here's a more complete example, controlling servos 0 and 1:
 
 ```python
 import robot
+import time
 
 R = robot.Robot()
 R.servos[0].mode = robot.PWM_SERVO
@@ -35,13 +36,22 @@ R.servos[1].mode = robot.PWM_SERVO
 # set servo 0 to the 50% position
 R.servos[0] = 50
 
+# wait for the servo to finish moving
+time.sleep(1)
+
 # set servo 1 to the -100% position
 R.servos[1] = -100
+
+time.sleep(1)
 
 # set servos 0 & 1 to the default positions
 R.servos[0] = 0
 R.servos[1] = 0
 ```
+
+:::tip
+Add a delay with `time.sleep` to wait for the servos to finish moving into their new positions.
+:::
 
 ## Blockly
 
