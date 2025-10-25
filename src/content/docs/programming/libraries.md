@@ -26,9 +26,9 @@ sidebar:
 | [pyserial](https://pyserial.readthedocs.io/en/latest/)    | 3.5     |
 | [rpi.gpio](https://sourceforge.net/p/raspberry-gpio-python/wiki/Home/)    | 0.7.0   |
 | [scipy](https://docs.scipy.org/doc/scipy/)       | 1.7.1   |
-| [smbus2](https://buildmedia.readthedocs.org/media/pdf/smbus2/latest/smbus2.pdf)       | 0.4.1   |
+| [smbus2](https://pypi.org/project/smbus2/)       | 0.4.1   |
 | [spidev](https://www.sigmdel.ca/michel/ha/rpi/dnld/draft_spidev_doc.pdf)     | 3.5     |
-| [wiringpi](http://wiringpi.com/reference/)    | 2.60.1  |
+
 
 :::warning
 Documentation might not align with used version, please verify documentation is set to the specified version as that is what is installed on the robot

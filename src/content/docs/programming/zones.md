@@ -12,10 +12,10 @@ Your code will probably need to look for different markers depending on the zone
 
 | **Team** | **Code** |
 | --- | --- |
-| Ruby | `robot.TEAM.RUBY` |
-| Jade | `robot.TEAM.JADE` |
-| Topaz | `robot.TEAM.TOPAZ` |
-| Diamond | `robot.TEAM.DIAMOND` |
+| Red | `robot.SECTOR.RED` |
+| Blue | `robot.SECTOR.BLUE` |
+| Green | `robot.SECTOR.GREEN` |
+| Yellow | `robot.SECTOR.YELLOW` |
 Here's an example:
 
 ```python
@@ -23,7 +23,7 @@ import robot
 
 R = robot.Robot()
 
-if R.zone == robot.TEAM.RUBY:
+if R.zone == robot.SECTOR.RED:
     print("Do something!")
 else:
     print("Do something else!")

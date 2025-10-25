@@ -23,8 +23,7 @@ print(markers)
 {
   info.type = TARGET
   info.id = 50
-  info.owning_team = TEAM.RUBY
-  info.target_type = TARGET_TYPE.LAIR
+  info.target_type = TARGET_TYPE.SUPPLY_CRATE
   dist = 0.856
   bearing.y = 0.754
   bearing.x = 1.03e+02
@@ -44,37 +43,32 @@ Full reference of the properties are further below but some useful properties ar
 | `marker.dist`            | Distance to the marker in metres                                                  |
 | `marker.bearing.y`       | The angle your robot needs to turn to get to the marker in degrees                |
 | `marker.info.id`         | Numeric code of the marker                                                        |
-| `marker.info.type`       | Returns `ARENA` for a wall marker, or `TARGET` for sheep, gems and lair markers.                   |
-| `marker.info.owning_team`| Returns the gem colour of the team that owns the marker. For example, calling this on Smaug's lair marker would return `TEAM.RUBY`. |
-| `marker.info.target_type` | Returns if the marker is a sheep, gem, or lair marker. If it's none of these, `NONE` will be returned. For example, a sheep marker would return `TARGET_TYPE.SHEEP`. |
+| `marker.info.type`       | Returns `ARENA` for a wall marker and trees, or `TARGET` for supply crates and supply drop  markers.                   |
+| `marker.info.target_type` | Returns if the marker is a Supply create or Supply drop marker. If it's none of these, `NONE` will be returned. For example, a supply crate marker would return `TARGET_TYPE.SUPPLY_CRATE`. However a tree marker would return `NONE`. |
 
 ## Codes
 
 :::tip
-You do not need to use the marker ids themselves for your calculations. Use `marker.type`, `marker.owning_team` and `marker.target_type` instead to find out the information you need (see above).
-:::
-
-:::tip
-`marker.owning_team` will return the Gem Type of that team, not the team name. For example, for team "Smaug" `marker.owning_team` would return "ruby".
+You do not need to use the marker ids themselves for your calculations. Use `marker.type` and `marker.target_type` instead to find out the information you need (see above).
 :::
 
 Every april tag has a code:
 
-- April tags 0-39 will be used for cubes. Although only 20 are used in each round, there are another 20 spare in case some get damaged.
+- April tags 0-31 will be used for supplies. Although only 4 supply crates and 4 supply drops used in each round, there are another 19 supply crates and 3 supply drops spare in case some get damaged.
 
-- April tags 100+ will around the arena on the walls. See the rules for
+- April tags 100+ will be around the arena on the walls. See the rules for
   specifics on where around the rules they will be placed
 
 - You do not need to use the marker numbers, and can instead use marker.type and marker.owning_team
 
 | Function    | Codes  |      |
 | -------- | ----- | ----
-| Arena Marker   | 100 - 123  |  |
-| Ruby | 24, 25 | Lair marker - 50 |
-| Jade | 26, 27 | Lair marker - 51 |
-| Topaz | 28, 29 | Lair marker - 52 |
-| Diamond | 30, 30 | Lair marker - 53 |
-| Sheep | 0 - 23 |
+| Supply crates | 0 - 23 |
+| Supply drops | 24 - 31 |
+| Trees | 76 - 91 |
+| Arena walls Marker   | 100 - 123  |
+
+
 
 ## Blockly
 
@@ -152,9 +146,8 @@ A `Marker` object contains information about a _detected_ marker. It has the fol
 | `info`                      | An object with various information about the marker                                                                                                                                                                                                  |
 | `info.id`                   | The ID number of the marker                                                                                                                                                                                                                          |
 | `info.size`                 | The length of the black edge of the marker in meters                                                                                                                                                                                                 |
-| `info.type`                 | Returns `ARENA` for a wall marker, or `TARGET` for sheep, gems and lair markers. |
-| `info.owning_team`          | Returns the gem colour of the team that owns the marker. For example, calling this on Smaug's lair marker would return `TEAM.RUBY`.                                                                                                                                                         |
-| `info.target_type`          | Returns if the marker is a sheep, gem, or lair marker. If it's none of these, `NONE` will be returned. For example, a sheep marker would return `TARGET_TYPE.SHEEP`. |
+| `info.type`                 | Returns `ARENA` for a wall marker and a tree marker, or `TARGET` for supply crates and supply drop markers. |
+| `info.target_type`          | Returns if the marker is a Supply create or Supply drop marker. If it's none of these, `NONE` will be returned. For example, a supply crate marker would return `TARGET_TYPE.SUPPLY_CRATE`. However a tree marker would return `NONE`. |
 | `info.bounding_box_colour`  | A tuple describing the colour which is drawn around the marker in the preview image (Blue, Red, Green)                                                                                                                                               |
 | `detection`                 | Technical information which has been inferred from the image.                                                                                                                                                                                        |
 | `detection.tag_family`      | The family of AprilTag which is detected. RoboCon currently only uses `tag36h11`.                                                                                                                                                                    |
@@ -187,12 +180,10 @@ R = robot.Robot()
 markers = R.see()
 
 for marker in markers:
-    if marker.info.owning_team == R.zone:
-        print(f"I own {marker.info.id}")
-    elif marker.info.type == robot.MARKER_TYPE.TARGET and marker.info.owning_team == robot.TEAM.JADE and marker.info.target_type == robot.TARGET_TYPE.LAIR:
-        print(f"Marker {marker.info.id} is Jade's Lair Marker")
-    else:
-        print(f"Marker {marker.info.id} is owned by {marker.info.owning_team}"")
+    if marker.info.type == robot.MARKER_TYPE.TARGET and marker.info.target_type == robot.TARGET_TYPE.SUPPLY_DROP:
+        print(f"Marker {marker.info.id} is a supply drop")
+    elif marker.info.target_type == robot.TARGET_TYPE.SUPPLY_CRATE:
+        print(f"Marker {marker.info.id} is a supply crate")
 ```
 :::
 

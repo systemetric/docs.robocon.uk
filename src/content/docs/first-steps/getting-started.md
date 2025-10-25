@@ -4,11 +4,11 @@ category: None
 sidebar:
   order: 1
 ---
-Welcome to the docs for **Robocon 2025**!
+Welcome to the docs for **Robocon 2026**!
 
-![RoboCon2025 Game Header](/images/RoboCon2025-Header.png)
+![RoboCon2025 Game Header](/images/RoboCon2026-Header.png)
 
-If you haven't already, it's a good idea to take a look at the [rules](/assets/rulebook.pdf) for this year's competition.
+If you haven't already, it's a good idea to take a look at the [rules](/assets/Rulebook.pdf) for this year's competition.
 
 :::tip
 
