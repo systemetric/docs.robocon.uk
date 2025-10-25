@@ -44,7 +44,7 @@ Full reference of the properties are further below but some useful properties ar
 | `marker.bearing.y`       | The angle your robot needs to turn to get to the marker in degrees                |
 | `marker.info.id`         | Numeric code of the marker                                                        |
 | `marker.info.type`       | Returns `ARENA` for a wall marker and trees, or `TARGET` for supply crates and supply drop  markers.                   |
-| `marker.info.target_type` | Returns if the marker is a Supply create or Supply drop marker. If it's none of these, `NONE` will be returned. For example, a supply crate marker would return `TARGET_TYPE.SUPPLY_CRATE`. |
+| `marker.info.target_type` | Returns if the marker is a Supply create or Supply drop marker. If it's none of these, `NONE` will be returned. For example, a supply crate marker would return `TARGET_TYPE.SUPPLY_CRATE`. However a tree marker would return `NONE`. |
 
 ## Codes
 
@@ -54,9 +54,9 @@ You do not need to use the marker ids themselves for your calculations. Use `mar
 
 Every april tag has a code:
 
-- April tags 0-39 will be used for cubes. Although only 20 are used in each round, there are another 20 spare in case some get damaged.
+- April tags 0-31 will be used for supplies. Although only 4 supply crates and 4 supply drops used in each round, there are another 19 supply crates and 3 supply drops spare in case some get damaged.
 
-- April tags 100+ will around the arena on the walls. See the rules for
+- April tags 100+ will be around the arena on the walls. See the rules for
   specifics on where around the rules they will be placed
 
 - You do not need to use the marker numbers, and can instead use marker.type and marker.owning_team
@@ -147,7 +147,7 @@ A `Marker` object contains information about a _detected_ marker. It has the fol
 | `info.id`                   | The ID number of the marker                                                                                                                                                                                                                          |
 | `info.size`                 | The length of the black edge of the marker in meters                                                                                                                                                                                                 |
 | `info.type`                 | Returns `ARENA` for a wall marker and a tree marker, or `TARGET` for supply crates and supply drop markers. |
-| `info.target_type`          | Returns if the marker is a Supply create or Supply drop marker. If it's none of these, `NONE` will be returned. For example, a supply crate marker would return `TARGET_TYPE.SUPPLY_CRATE`. |
+| `info.target_type`          | Returns if the marker is a Supply create or Supply drop marker. If it's none of these, `NONE` will be returned. For example, a supply crate marker would return `TARGET_TYPE.SUPPLY_CRATE`. However a tree marker would return `NONE`. |
 | `info.bounding_box_colour`  | A tuple describing the colour which is drawn around the marker in the preview image (Blue, Red, Green)                                                                                                                                               |
 | `detection`                 | Technical information which has been inferred from the image.                                                                                                                                                                                        |
 | `detection.tag_family`      | The family of AprilTag which is detected. RoboCon currently only uses `tag36h11`.                                                                                                                                                                    |
