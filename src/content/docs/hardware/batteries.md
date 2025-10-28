@@ -38,7 +38,7 @@ To use your batteries, you must connect them to the **Hills Road RoboCon** Brain
 During operation, the battery is protected by over-current protection by a regulator on the power board. If any equipment is short circuited, the over-current protection will activate - protecting the battery. There is a fuse placed inline with the power cord. If you suspect the fuse has gone something _very_ wrong has happened. This is an important safety feature.
 
 :::danger
-Do **NOT**, under any circumstances, bypass or replace the fuse. If the fuse has blown then the power board has failed and **must** be replaced for safe operation. If you suspect the fuse has blown then please contact <mailto:robotics@hrsfc.ac.uk> straight away.
+Do **NOT**, under any circumstances, bypass or replace the fuse. If the fuse has blown then the power board has failed and **must** be replaced for safe operation. If you suspect the fuse has blown then please contact [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk) straight away.
 :::
 
 Mechanical damage to a battery can be dangerous, and a puncture or large force applied to a battery causes a serious risk of fire. To avoid this, your battery should be shielded from mechanical damage while you operate it. Secure your battery to your robot, so that it does not move or fall off while the robot moves. You should also build a compartment for the battery to be placed in to prevent accidental collisions damaging the battery.
