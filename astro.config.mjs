@@ -5,6 +5,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
+    base: process.env.ROBOCON_BRAIN === '1' ? '/docs/' : '/',
     integrations: [starlight({
         title: 'RoboCon Docs',
         favicon: './src/assets/favicon.png',
