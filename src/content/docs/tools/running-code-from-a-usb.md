@@ -83,10 +83,11 @@ Every time the robot takes a picture it is updated on the web interface, during 
 
 When the robot boots, it loads a default image which is displayed until the robot takes a picture, in the arena these images are displayed on an overhead projector. You can change the default image.
 
-1. Save your Image as 440x330 pixels in jpeg format onto the USB stick as "team_logo.jpg"
-2. Boot the robot once to install the image
-3. Fully shut down the robot
-4. The image will be used from the next time the robot is booted
+1. Save your Image in jpeg format onto the Laptops in the very useful boxes provided
+2. While connected to the BrainBox, navigate to robot.local on the web browser and go to the editor
+3. Go to settings - in the top-right hand corner - and then upload your image.
+4. Power off you robot
+5. Reconnect your robot and go back to the editor, wait a few seconds and you should see your new logo!
 
 :::tip
 We may ask that your image includes either a Team Name or your institution (e.g. Systemetric or Hills Road Sixth Form College) to assist the Marshalls, but if you have a iconic robot design then we may waive this rule
