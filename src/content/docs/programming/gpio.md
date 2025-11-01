@@ -74,7 +74,7 @@ while True:
     print(R.gpio[1].analog)
 
     # Switch output state and send it to 2
-    outputState = !outputState
+    outputState = not outputState
     R.gpio[2].digital = outputState
 
     # Read the value of 3
