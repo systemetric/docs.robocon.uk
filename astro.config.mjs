@@ -8,7 +8,7 @@ export default defineConfig({
     base: process.env.ROBOCON_BRAIN === '1' ? '/docs/' : '/',
     integrations: [starlight({
         title: 'RoboCon Docs',
-        favicon: './src/assets/favicon.png',
+        favicon: './assets/favicon.png',
         social: {
             instagram: 'https://www.instagram.com/hillsroadrobocon/',
             twitter: 'https://twitter.com/HRobocon/',
