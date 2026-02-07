@@ -7,6 +7,7 @@
     "start": "astro dev",
     "build": "astro check && astro build",
     "build_brain": "astro check && ROBOCON_BRAIN=1 astro build && ./scripts/fix-links-brain.sh",
+    "build-shepherd": "astro check && ROBOCON_BRAIN=1 astro build && ./scripts/fix-links-brain.sh && rm -rf ../static/docs && mkdir -p ../static/docs && cp -r dist/* ../static/docs/",
     "preview": "astro preview",
     "astro": "astro"
   },
