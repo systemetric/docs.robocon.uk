@@ -6,18 +6,28 @@ sidebar:
 ---
 When using Python to program your robot, you must remember to initialise the robot. If you're using Blockly, this is done automatically.
 
-All of the code required to control the Robot is located in the `robot` python module.
-To import the module, and initialise the robot use the following code:
+All of the code required to control the Robot is located in the `robocon` Python module.
+The `robocon` module is composed of various submodules that control various aspects of the robot.
 
-:::caution
-You *must* add the following lines of code to any code you write in the editor, even if it doesn't use any of the brainbox's GPIO. 
+|Name|Function|Notable Classes|
+|-|-|-|
+|`brain`|Hardware control|`IO`|
+|`vision`|Camera and marker detection|`Camera`|
+|`game`|Game specific information||
 
-If you don't, the brainbox will crash and you risk losing any code you have written if it hasn't been backed up! If your brainbox has crashed (or become unresponsive) [click here](/tools/brainbox-crashed-fix).
-:::
+
+To import the various modules, and initialise robot subsystems, use the following code:
 
 ```py
-import robot
-R = robot.Robot()
+from robocon.vision import Camera
+from robocon.io import IO
+
+I = IO()        # initialise i/o controller
+C = Camera()    # initialise camera controller
 ```
 
-When you initialise the robot with `robot.Robot()`, your code will be paused until the hardware start button or Shepherd run button is pressed. When the Robot is waiting for either of these buttons to be pressed, the blue status LED will flash on and off.
+The `IO` and `Camera` classes are completely separate, you don't need to initialise them if you don't plan on using the features of the robot they provide.
+
+Unlike in previous versions of the robot library, the startup wait occurs before your
+code is executed. When in this state, the blue "user" LED will flash rapidly, either
+the hardware start button, or Sheep run button can be used to start your code.

@@ -4,7 +4,7 @@ category: Tools
 sidebar:
   order: 3
 ---
-We recommend you use the code editor that's included with Shepherd to program your robot. You can either program in Python or use Blockly, a powerful Scratch-like programming tool.
+We recommend you use the code editor that's included with Shepherd to program your robot. You can either program in Python or use Blockly, a Scratch-like programming tool.
 
 Assuming you've [connected to your robot](/tools/connecting), head to <http://robot.local/editor> or click the orange
 editor button on the Shepherd homepage.
@@ -60,8 +60,19 @@ Your new project will open in the editor. See the sections below for more inform
 
 ## Python Projects
 
-Python projects provide a powerful development tool with syntax highlighting and code completion for the standard Python libraries and also the `robot` module. If you are interested, it uses the text editor that powers Visual Studio Code.
+Python projects provide a powerful development tool with syntax highlighting and code completion for the standard Python libraries and also the `robocon` module. If you are interested, it uses the text editor that powers Visual Studio Code.
 
 ## Blockly Projects
 
 Google's Blockly is a programming environment similar to Scratch that allows you to program your robot with blocks. You still have access to all the features of the robot so you are not disadvantaged if you decide to use this over Python.
+
+## Project Attributes
+
+In the run configuration dialog (cog icon, top right-hand corner), project attributes can be configured. These control various aspects of how a project is run, including initial servo positions and power state. See their respective sections of this documentation to find out more information.
+
+## Other
+
+- The "logs" and "projects" sidebars can both be resized, which may allow you to see
+    logs and images more clearly.
+- You can expand the current shown image by pressing the small icon that displays when
+    hovering over it.

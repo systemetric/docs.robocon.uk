@@ -16,10 +16,10 @@ If you want to spin your motors in reverse, just stick a negative sign in front 
 
 ## Python
 
-You can control motors using the `motors` property of the `Robot` object. To set the power of the first motor to 60% use:
+You can control motors using the `motors` property of the `IO` object. To set the power of the first motor to 60% use:
 
 ```python
-R.motors[0] = 60
+I.motors[0] = 60
 ```
 
 Remember that indexes start at 0; To control the second motor instead, replace `motors[0]` with `motors[1]`.
@@ -27,33 +27,33 @@ Remember that indexes start at 0; To control the second motor instead, replace `
 To stop both motors:
 
 ```python
-R.motors[0] = 0
-R.motors[1] = 0
+I.motors[0] = 0
+I.motors[1] = 0
 ```
 
 Here's a more complete example:
 
 ```python
-import robot
+from robocon.io import IO
 
-R = robot.Robot()
+I = IO()
 
 # set motor 1 to 60% power
-R.motors[0] = 60
+I.motors[0] = 60
 
 # set motor 2 to 60% power in the backwards direction
-R.motors[1] = -60
+I.motors[1] = -60
 
 # turn both motors off
-R.motors[0] = 0
-R.motors[1] = 0
+I.motors[0] = 0
+I.motors[1] = 0
 ```
 
 :::tip
 By default the BrainBox is designed to work safely with the TT motors supplied, these are 6V motors. If you choose to use motors that have a different nominal voltage, then you can specify this when initalising the robot object. For example when using 9V motors:
 
 ```python
-R = robot.Robot(max_motor_voltage=9)
+I = IO(max_motor_voltage=9)
 ```
 
 We do not recommend running motors above their design voltage, it may (sometimes dramatically) shorten the lifespan of your motors. If you choose to overvolt your motors you should be prepared to swap them with spares and design your robot to ensure you have access to replace them.

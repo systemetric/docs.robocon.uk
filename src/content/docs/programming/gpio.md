@@ -6,18 +6,28 @@ sidebar:
 ---
 The GPIO (General Purpose Input Output) allows you to turn on LEDs, react to button presses, or do just about anything.
 
-Our BrainBox has 4 GPIO pins that you can control. Before you do anything with a pin, you must first set its' mode.
+Our BrainBox has 4 GPIO pins that you can control. Before you do anything with a pin, you must first set its mode. GPIO control is provided by the `io` subsystem of the robot library.
 
 There are 4 modes:
 |Mode|Python|Description|
 |-|-|-|
-|Digital Output|`robot.OUTPUT`|Allows you to write a high or low signal|
-|Digital Input|`robot.INPUT`|Allows you to read a high or low signal|
-|Analog Input|`robot.INPUT_ANALOG`|Allows you to read a voltage, like a voltmeter|
-|Pullup Input|`robot.INPUT_PULLUP`|Like input, but uses a [weak pullup resistor](#pull-ups)|
+|Digital Output|`robocon.io.OUTPUT`|Allows you to write a high or low signal|
+|Digital Input|`robocon.io.INPUT`|Allows you to read a high or low signal|
+|Analog Input|`robocon.io.INPUT_ANALOG`|Allows you to read a voltage, like a voltmeter|
+|Pullup Input|`robocon.io.INPUT_PULLUP`|Like input, but uses a [weak pullup resistor](#pull-ups)|
 
 :::tip
 The GPIO are numbered 0-3
+:::
+
+:::tip
+The mode constants are provided by the `robocon.io` submodule, you may wish to import these first:
+
+```python
+from robocon.io import OUTPUT, INPUT, INPUT_ANALOG, INPUT_PULLUP
+```
+
+If you choose not to, you will need to use the prefix `robocon.io.` on each constant.
 :::
 
 ## Python
@@ -25,28 +35,28 @@ The GPIO are numbered 0-3
 To write a digital signal on pin 0:
 
 ```python
-R.gpio[0].mode = robot.OUTPUT
-R.gpio[0].digital = True
+I.gpio[0].mode = OUTPUT
+I.gpio[0].digital = True
 ```
 
 To read a digital signal on pin 1:
 
 ```python
-R.gpio[1].mode = robot.INPUT
-print(R.gpio[1].digital)
+I.gpio[1].mode = INPUT
+print(I.gpio[1].digital)
 ```
 
 To read an analog signal on pin 2:
 
 ```python
-R.gpio[2].mode = robot.INPUT_ANALOG
-print(R.gpio[2].analog)
+I.gpio[2].mode = INPUT_ANALOG
+print(I.gpio[2].analog)
 ```
 
 To read a pullup signal on pin 3
 ```python
-R.gpio[3].mode = robot.INPUT_PULLUP
-print(R.gpio[3].digital) # Note that this output will be inverted - True when the connnection is open, and False when closed.
+I.gpio[3].mode = INPUT_PULLUP
+print(I.gpio[3].digital) # Note that this output will be inverted - True when the connnection is open, and False when closed.
 ```
 
 :::tip
@@ -56,29 +66,29 @@ All modes can be used on all pins. Note that you only need to set this mode once
 Here's a more complete example:
 
 ```python
-import robot
+from robocon.io import *
 import time
 
-R = robot.Robot()
+I = IO()
 
-R.gpio[0].mode = robot.INPUT
-R.gpio[1].mode = robot.INPUT_ANALOG
-R.gpio[2].mode = robot.OUTPUT
-R.gpio[3].mode = robot.INPUT_PULLUP
+I.gpio[0].mode = INPUT
+I.gpio[1].mode = INPUT_ANALOG
+I.gpio[2].mode = OUTPUT
+I.gpio[3].mode = INPUT_PULLUP
 
 outputState = False
 
 while True:
     # Read the values of 0 and 1
-    print(R.gpio[0].digital)
-    print(R.gpio[1].analog)
+    print(I.gpio[0].digital)
+    print(I.gpio[1].analog)
 
     # Switch output state and send it to 2
     outputState = not outputState
-    R.gpio[2].digital = outputState
+    I.gpio[2].digital = outputState
 
     # Read the value of 3
-    print(R.gpio[3].digital)
+    print(I.gpio[3].digital)
 
     # Pause for 2 seconds
     time.sleep(2)

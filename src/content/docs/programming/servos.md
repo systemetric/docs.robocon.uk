@@ -12,11 +12,13 @@ Servos are plugged into the **Servo** ports on the BrainBox. The numbers present
 
 ## Python
 
-You can control servos using the `servos` property of the `Robot` object. To set the servo 0 to the 50% position use:
+Servo control is provided by the `io` subsystem of the robot library. You will need to import the `IO` object and various constants from this module before using servos.
+
+You can control servos using the `servos` property of the `IO` object. To set the servo 0 to the 50% position use:
 
 ```python
-R.servos[0].mode = robot.PWM_SERVO
-R.servos[0] = 50
+I.servos[0].mode = PWM_SERVO
+I.servos[0] = 50
 ```
 
 :::tip
@@ -26,27 +28,27 @@ For example, to control servo 3 instead, replace `servos[0]` with `servos[3]`. A
 Here's a more complete example, controlling servos 0 and 1:
 
 ```python
-import robot
+from robocon.io import *
 import time
 
-R = robot.Robot()
-R.servos[0].mode = robot.PWM_SERVO
-R.servos[1].mode = robot.PWM_SERVO
+I = IO()
+I.servos[0].mode = PWM_SERVO
+I.servos[1].mode = PWM_SERVO
 
 # set servo 0 to the 50% position
-R.servos[0] = 50
+I.servos[0] = 50
 
 # wait for the servo to finish moving
 time.sleep(1)
 
 # set servo 1 to the -100% position
-R.servos[1] = -100
+I.servos[1] = -100
 
 time.sleep(1)
 
 # set servos 0 & 1 to the default positions
-R.servos[0] = 0
-R.servos[1] = 0
+I.servos[0] = 0
+I.servos[1] = 0
 ```
 
 :::tip
@@ -56,3 +58,14 @@ Add a delay with `time.sleep` to wait for the servos to finish moving into their
 ## Blockly
 
 Blocks for controlling servos can be found in the **Movement** section.
+
+## Setting initial servo position
+
+The initial position of servos can be set before your code starts running using project attributes. Values can be any integer between -100 and 100 inclusive.
+
+|Attribute|Values||
+|-|-|-|
+|`servo0_pos`|x ∈ [-100, 100] ∩ ℤ|Initial position of servo 0|
+|`servo1_pos`|x ∈ [-100, 100] ∩ ℤ|Initial position of servo 1|
+|`servo2_pos`|x ∈ [-100, 100] ∩ ℤ|Initial position of servo 2|
+|`servo3_pos`|x ∈ [-100, 100] ∩ ℤ|Initial position of servo 3|

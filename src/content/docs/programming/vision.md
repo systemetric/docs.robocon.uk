@@ -8,10 +8,12 @@ Computer Vision allows your robots to understand their environment. For the comp
 
 ## Python
 
-To look for markers call `see()`:
+Computer vision is provided by the `vision` subsystem of the robot library, you will need to import it before using any of the examples given. Many examples here make use of game-specific constants which can br found in the `robocon.game` submodule.
+
+To look for markers call `capture()` on the `Camera` object:
 
 ```python
-markers = R.see()
+markers = C.capture()
 
 print(markers)
 ```
@@ -21,9 +23,9 @@ print(markers)
 ```
 [target Marker 0: 0.856m @0.754 degrees
 {
-  info.type = TARGET
+  info.type = ...
   info.id = 50
-  info.target_type = TARGET_TYPE.SUPPLY_CRATE
+  info.target_type = ...
   dist = 0.856
   bearing.y = 0.754
   bearing.x = 1.03e+02
@@ -38,13 +40,13 @@ print(markers)
 
 Full reference of the properties are further below but some useful properties are:
 
-| Property                 | Description                                                                       |
-| ------------------------ | --------------------------------------------------------------------------------- |
-| `marker.dist`            | Distance to the marker in metres                                                  |
-| `marker.bearing.y`       | The angle your robot needs to turn to get to the marker in degrees                |
-| `marker.info.id`         | Numeric code of the marker                                                        |
-| `marker.info.type`       | Returns `ARENA` for a wall marker and trees, or `TARGET` for supply crates and supply drop  markers.                   |
-| `marker.info.target_type` | Returns if the marker is a Supply create or Supply drop marker. If it's none of these, `NONE` will be returned. For example, a supply crate marker would return `TARGET_TYPE.SUPPLY_CRATE`. However a tree marker would return `NONE`. |
+|Property|Description|
+|-|-|
+|`marker.dist`|Distance to the marker in metres|
+|`marker.bearing.y`|The angle your robot needs to turn to get to the marker in degrees|
+|`marker.info.id`|Numeric code of the marker|
+|`marker.info.type`|The type of marker detected, this is a competition dependent constant|
+|`marker.info.target_type`|The type of target detected, if applicable, this is a competition dependent constant|
 
 ## Codes
 
@@ -52,7 +54,7 @@ Full reference of the properties are further below but some useful properties ar
 You do not need to use the marker ids themselves for your calculations. Use `marker.type` and `marker.target_type` instead to find out the information you need (see above).
 :::
 
-Every april tag has a code:
+Every April Tag has a code:
 
 - April tags 0-31 will be used for supplies. Although only 4 supply crates and 4 supply drops used in each round, there are another 19 supply crates and 3 supply drops spare in case some get damaged.
 
@@ -94,9 +96,9 @@ After reading the [motors documentation](/programming/motors) you should be able
 - If there is no marker in sight turn a bit and look again, maybe there is a marker out of view.
 
 ```python
-import robot
+from robocon.vision import Camera
 
-R = robot.Robot()
+C = Camera()
 
 def move(distance):
     """The robot drives `distance` meters forwards"""
@@ -107,7 +109,7 @@ def turn(rotation):
     print("PUT YOUR TURN CODE HERE")
 
 while True:
-    for marker in R.see():
+    for marker in C.capture():
         turn(marker.bearing.y)  # Face the marker
         move(marker.dist)       # Drive to the marker
     else:
@@ -120,7 +122,7 @@ while True:
 Details about the markers can be accessed using the following syntax:
 
 ```python
-markers = R.see()  # returns list of markers which the robot can see
+markers = C.capture()  # returns list of markers which the robot can see
 
 for marker in markers:
     print(marker.dist)       # The distance to the marker in meters
@@ -170,39 +172,40 @@ no way to know how you've mounted your camera. You may need to account for this.
 :::
 
 :::tip
-You can use `TARGET_TYPE`, `MARKER_TYPE`, and `TEAM` from `robot`, for example...  
+You can use `TARGET_TYPE`, `MARKER_TYPE`, and `TEAM` from `robot`, for example...
 
 ```python
-import robot
+from robocon.vision import Camera
+from robocon.game import MARKER_TYPE, TARGET_TYPE
 
-R = robot.Robot()
+C = Camera()
 
-markers = R.see()
+markers = C.capture()
 
 for marker in markers:
-    if marker.info.type == robot.MARKER_TYPE.TARGET and marker.info.target_type == robot.TARGET_TYPE.SUPPLY_DROP:
+    if marker.info.type == MARKER_TYPE.TARGET and marker.info.target_type == TARGET_TYPE.SUPPLY_DROP:
         print(f"Marker {marker.info.id} is a supply drop")
-    elif marker.info.target_type == robot.TARGET_TYPE.SUPPLY_CRATE:
+    elif marker.info.target_type == TARGET_TYPE.SUPPLY_CRATE:
         print(f"Marker {marker.info.id} is a supply crate")
 ```
 :::
 
-## The `Camera` object
+## The `PhyCamera` object
 
-An interface to the camera is provided incase you want to do additional computer vision.
+An interface to the lower-level camera hardware is provided in case you want to do additional computer vision.
 
 ### Changing the resolution
 
 By default the camera takes pictures at a resolution of **640x480px**. You can change this by setting the `res` parameter.
 
 ```python
-import robot
+from robocon.vision import Camera
 
-R = robot.Robot()
+C = Camera()
 
-print(f"The current res is set to {R.camera.res}")
-R.camera.res = (1920, 1440)
-print(f"The current res is set to {R.camera.res}")
+print(f"The current res is set to {C.phy.res}")
+C.phy.res = (1920, 1440)
+print(f"The current res is set to {C.phy.res}")
 ```
 
 You must use one of the following resolutions:
@@ -222,19 +225,19 @@ The resolution values may be different on a USB camera. Please see [Using USB Ca
 
 ### Get data straight from the camera
 
-If you wish to do your own computer vision you can capture frames directly from the camera using `robot.camera.capture()`.
+If you wish to do your own computer vision you can capture frames directly from the camera using `C.phy.capture()`.
 
 ```python
-import robot
+from robocon.vision import Camera
 
-R = robot.Robot()
+C = Camera()
 
-image = R.camera.capture()
+image = C.phy.capture()
 
 image.grey_frame # A 2d numpy array of the image data uint8
 image.colour_frame # A 3d numpy array of the image data
 image.colour_type # The encoding method used to store the colour_frame defaults to 8 bit RGB.
-image.time # A `datetime` object representing approximately the capture time.
+image.time # A `datetime` object representing the approximate capture time.
 ```
 ## Using USB cameras
 
@@ -244,20 +247,20 @@ USB cameras can have slightly different functionality than the built-in Pi Camer
 
 Please **turn your robot off** before plugging in your USB Camera of choice.
 
-To use a USB camera you will need to initialize the `Robot` with something which inherits from `robot.vision.Camera`. Then just call `R.see()` as you would normally.
+To use a USB camera you will need to initialize the `Camera` object with something which inherits from `robocon.vision.PhyCamera`. Then just call `C.capture()` as you would normally.
 
 ```python
-import robot
-from robot.vision import RoboConUSBCamera
+from robocon.vision import Camera, RoboConUSBCamera
 
-R = robot.Robot(camera=RoboConUSBCamera)
+# RoboConUSBCamera inherits from PhyCamera
+C = Camera(phy=RoboConUSBCamera)
 
-print(R.see())
+print(C.capture())
 ```
 
 ### Setting the resolution
 
-You may now wish to change the resolution of your camera, this can be done the same as before with `R.camera.res = (width,height)`.
+You may now wish to change the resolution of your camera, this can be done the same as before with `C.phy.res = (width,height)`.
 
 :::note
 Some resolutions may not work with your USB camera, as different cameras support different resolutions. Check your camera's documentation. If you try and use a resolution that your camera doesn't support, you will get an error that will state the closest resolution to the value you attempted to use. Try changing your resolution to the value that the error message suggests!
@@ -266,18 +269,17 @@ Some resolutions may not work with your USB camera, as different cameras support
 For example, to set a USB Camera's resolution to `800x600`:
 
 ``` python
-import robot
-from robot.vision import RoboConUSBCamera
+from robocon.vision import Camera, RoboConUSBCamera
 
-R = robot.Robot(camera=RoboConUSBCamera)
+C = Camera(phy=RoboConUSBCamera)
 
-R.camera.res = (800, 600)
-print(R.see())
+C.phy.res = (800, 600)
+print(C.capture())
 ```
 
 ### Calibrating the camera
 
-You will then need to calibrate your USB camera as the distance that it reports will not be accurate. You can do this by changing the value in the `R.camera.focal_lengths` dictionary up or down. By default, the robot will use the focal lengths for a "Logitech C270" camera, it's unlikely this is your camera - so see the steps below on how to calibrate it.
+You will then need to calibrate your USB camera as the distance that it reports will not be accurate. You can do this by changing the value in the `C.phy.focal_lengths` dictionary up or down. By default, the robot will use the focal lengths for a "Logitech C270" camera, it's unlikely this is your camera - so see the steps below on how to calibrate it.
 
 :::tip
 Remember that focal lengths vary for different resolutions. You will need to run the calibration code below to find the focal length for each resolution you intend to use with your USB camera.
@@ -287,35 +289,33 @@ Remember that focal lengths vary for different resolutions. You will need to run
 - Copy and paste the following code into your editor. Please set the `resolution` value to a resolution you wish to use.
 
 ``` python
-import robot
-from robot.vision import RoboConUSBCamera
-R = robot.Robot(camera=RoboConUSBCamera)
+from robocon.vision import Camera, RoboConUSBCamera
+C = Camera(phy=RoboConUSBCamera)
 
 resolution = (640, 480)
 
-R.camera.focal_lengths[resolution] = (120, 120) # set the focal lengths to a known bad value
-R.camera.res = resolution # set resolution
+C.phy.focal_lengths[resolution] = (120, 120) # set the focal lengths to a known bad value
+C.phy.res = resolution # set resolution
 
-marker = R.see()[0] # get first marker
+marker = C.capture()[0] # get first marker
 d = marker.dist
 focal_length = 120 / d # focal length = focal length / distance
 print("Focal length is around:",focal_length)
-print("Use this in your code to set the correct focal length: R.camera.focal_lengths[resolution] = ("+str(focal_length)+", "+str(focal_length)+")")
+print("Use this in your code to set the correct focal length: C.phy.focal_lengths[resolution] = ("+str(focal_length)+", "+str(focal_length)+")")
 ```
 
 It's worth noting that this is only an average value. 
 
-The code above will output a focal length value which you should use **before** setting `R.camera.res` or `R.see()`. You can also copy the line of code it produces and paste that into your code to set the focal lengths.
+The code above will output a focal length value which you should use **before** setting `C.phy.res` or `C.capture()`. You can also copy the line of code it produces and paste that into your code to set the focal lengths.
 
 For example, if your focal length was `123` at the resolution of `800x600`, you should use the following lines of code, in the **same order**:
 
 ``` python
-import robot
-from robot.vision import RoboConUSBCamera
-R = robot.Robot(camera=RoboConUSBCamera)
+from robot.vision import Camera, RoboConUSBCamera
+C = Camera(phy=RoboConUSBCamera)
 
-R.camera.focal_lengths[resolution] = (123, 123)
-R.camera.res = resolution
+C.phy.focal_lengths[resolution] = (123, 123)
+C.phy.res = resolution
 
-marker = R.see()[0]
+marker = C.capture()[0]
 ```
