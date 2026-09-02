@@ -8,28 +8,26 @@ Your code will probably need to look for different markers depending on the zone
 
 ## Python
 
-`R.zone` will be equal to the the start zone of the robot, and will be equal to one of the teams.
+`robocon.zone` will indicate the starting zone of your robot, this is the same as your team colour in the arena.
 
 | **Team** | **Code** |
 | --- | --- |
-| Red | `robot.SECTOR.RED` |
-| Blue | `robot.SECTOR.BLUE` |
-| Green | `robot.SECTOR.GREEN` |
-| Yellow | `robot.SECTOR.YELLOW` |
+| Red | `robocon.TEAM.RED` |
+| Blue | `robocon.TEAM.BLUE` |
+| Green | `robocon.TEAM.GREEN` |
+| Yellow | `robocon.TEAM.YELLOW` |
+
 Here's an example:
 
 ```python
-import robot
+import robocon
 
-R = robot.Robot()
-
-if R.zone == robot.SECTOR.RED:
+if robocon.zone == robocon.TEAM.RED:
     print("Do something!")
 else:
     print("Do something else!")
 ```
 
-This code checks if the first marker in the list belongs to the current robot.
 
 ## Blockly
 

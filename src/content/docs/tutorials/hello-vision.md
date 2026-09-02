@@ -13,20 +13,20 @@ Create a new script called "VisionTest".
 Unlike in the previous tutorial, [Hello World](/tutorials/hello-world), the use of the first couple lines of code is important here. So let's break them down:
 
 ```python
-import robot
-R = robot.Robot()
+from robocon.vision import Camera
+C = Camera()
 ```
 
-This creates a "Robot" object, and places it inside the variable "R". This allows us to use robot functions through the R variable, such as `R.See()`. If you are using Blockly, the robot is initialised automatically.
+This creates a "Camera" object, and places it inside the variable "C". This allows us to use camera functions through the C variable, such as `C.capture()`. If you are using Blockly, the camera is initialised automatically.
 
 [Here](https://www.makeuseof.com/tag/object-oriented-programming-explained/) is a basic introduction into what Object Oriented Programming is.
 
 ## Counting Markers
 
-To make the robot "see" what is in front of it we have to call the function `R.see()` and assign the result to a variable. This will set that variable to a list of every marker the robot can see:
+To make the robot "see" what is in front of it we have to call the function `C.capture()` and assign the result to a variable. This will set that variable to a list of every marker the robot can see:
 
 ```python
-markers = R.see()
+markers = C.capture()
 ```
 
 Every item in the list contains information about the type of the marker, the distance/angle to the marker, and more! For now all we want to do is to find the number of markers the robot can see, so we just need to print the length of the list:
@@ -42,12 +42,12 @@ If we run this code as it is, it will output the number of markers it can see on
 The complete code is as follows:
 
 ```python
-import robot
+from robocon.vision import Camera
 import time
-R = robot.Robot()
+C = Camera()
 
 while True:
-    markers = R.see()
+    markers = C.camera()
     print(len(markers))
     time.sleep(2)
 ```

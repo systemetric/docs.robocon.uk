@@ -39,13 +39,8 @@ If you are running into problems using the editor, more details can be found [he
 In the editor window write:
 
 ```python
-import robot
-
-R = robot.Robot()
-
 print("Hello World!")
 ```
-You don't need to know much about what the first couple lines do - they are covered in later chapters, and do setup for the robot to be able to run. The important bit for you to understand is the last bit - the `print()` statement.
 
 ## Running the code
 
