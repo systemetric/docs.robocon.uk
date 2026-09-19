@@ -25,7 +25,7 @@ I.servos[0] = 50
 For example, to control servo 3 instead, replace `servos[0]` with `servos[3]`. Again, remember that indexes start at 0.
 :::
 
-Here's a more complete example, controlling servos 0 and 1:
+Here's a more complete example, moving servo 0 between two positions:
 
 ```python
 from robocon.io import *
@@ -33,22 +33,18 @@ import time
 
 I = IO()
 I.servos[0].mode = PWM_SERVO
-I.servos[1].mode = PWM_SERVO
 
-# set servo 0 to the 50% position
-I.servos[0] = 50
+while True:
+    # set servo 0 to the 50% position
+    I.servos[0] = 50
 
-# wait for the servo to finish moving
-time.sleep(1)
+    # wait for the servo to finish moving
+    time.sleep(1)
 
-# set servo 1 to the -100% position
-I.servos[1] = -100
+    # set servo 0 to the -100% position
+    I.servos[0] = -100
 
-time.sleep(1)
-
-# set servos 0 & 1 to the default positions
-I.servos[0] = 0
-I.servos[1] = 0
+    time.sleep(1)
 ```
 
 :::tip
