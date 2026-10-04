@@ -34,7 +34,7 @@ I.motors[1] = 0
 Here's a more complete example:
 
 ```python
-from robocon.io import IO
+from robocon.brain import IO
 
 I = IO()
 

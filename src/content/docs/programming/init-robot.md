@@ -20,7 +20,7 @@ To import the various modules, and initialise robot subsystems, use the followin
 
 ```py
 from robocon.vision import Camera
-from robocon.io import IO
+from robocon.brain import IO
 
 I = IO()        # initialise i/o controller
 C = Camera()    # initialise camera controller

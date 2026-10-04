@@ -11,23 +11,23 @@ Our BrainBox has 4 GPIO pins that you can control. Before you do anything with a
 There are 4 modes:
 |Mode|Python|Description|
 |-|-|-|
-|Digital Output|`robocon.io.OUTPUT`|Allows you to write a high or low signal|
-|Digital Input|`robocon.io.INPUT`|Allows you to read a high or low signal|
-|Analog Input|`robocon.io.INPUT_ANALOG`|Allows you to read a voltage, like a voltmeter|
-|Pullup Input|`robocon.io.INPUT_PULLUP`|Like input, but uses a [weak pullup resistor](#pull-ups)|
+|Digital Output|`robocon.brain.OUTPUT`|Allows you to write a high or low signal|
+|Digital Input|`robocon.brain.INPUT`|Allows you to read a high or low signal|
+|Analog Input|`robocon.brain.INPUT_ANALOG`|Allows you to read a voltage, like a voltmeter|
+|Pullup Input|`robocon.brain.INPUT_PULLUP`|Like input, but uses a [weak pullup resistor](#pull-ups)|
 
 :::tip
 The GPIO are numbered 0-3
 :::
 
 :::tip
-The mode constants are provided by the `robocon.io` submodule, you may wish to import these first:
+The mode constants are provided by the `robocon.brain` submodule, you may wish to import these first:
 
 ```python
-from robocon.io import OUTPUT, INPUT, INPUT_ANALOG, INPUT_PULLUP
+from robocon.brain import OUTPUT, INPUT, INPUT_ANALOG, INPUT_PULLUP
 ```
 
-If you choose not to, you will need to use the prefix `robocon.io.` on each constant.
+If you choose not to, you will need to use the prefix `robocon.brain.` on each constant.
 :::
 
 ## Python
@@ -66,7 +66,7 @@ All modes can be used on all pins. Note that you only need to set this mode once
 Here's a more complete example:
 
 ```python
-from robocon.io import *
+from robocon.brain import *
 import time
 
 I = IO()

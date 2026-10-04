@@ -12,7 +12,7 @@ First things first, make sure that your robot is not about to drive off a table.
 Next, you'll need to initialise the robot. For this exercise, you'll also need the "time" Python library - remember that we used this last chapter to help our camera code along.
 ```python
 import time
-from robocon.io import *
+from robocon.brain import *
 I = IO()
 ```
 
@@ -27,7 +27,7 @@ Now that everything is set up, it's time to set the motors. All the motors are s
 Changing the speed of the motor is easy - just set the motor to a number from -100 to 100. Immediately setting the power to 100 can have unwanted side effects, so we'll start by setting them to half power:
 ```python
 import time
-from robocon.io import *
+from robocon.brain import *
 I = IO()
 
 I.motors[0] = 50
@@ -39,7 +39,7 @@ The issue with this code is that unfortunately, it will never tell it to stop mo
 To fix this we can set the power of the motors to 0 after a couple of seconds:
 ```python
 import time
-from robocon.io import *
+from robocon.brain import *
 
 I = IO()
 
@@ -56,7 +56,7 @@ This is where `sleep()` becomes handy. It pauses the execution of your code with
 To turn the robot, you just need to set one motor going forwards and the second motor going backwards. The following program makes the robot do a little dance - try it out! (Note that if your robot had inverted motors from earlier, you may have differing results)
 ```python
 import time
-from robocon.io import *
+from robocon.brain import *
 I = IO()
 
 speed = 50

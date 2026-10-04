@@ -28,7 +28,7 @@ For example, to control servo 3 instead, replace `servos[0]` with `servos[3]`. A
 Here's a more complete example, moving servo 0 between two positions:
 
 ```python
-from robocon.io import *
+from robocon.brain import *
 import time
 
 I = IO()

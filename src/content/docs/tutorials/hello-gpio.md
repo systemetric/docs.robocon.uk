@@ -19,7 +19,7 @@ GPIO outputs are already protected by a 1k Ohm current limiting resistor, you ca
 If you want to put an LED on your robot, for testing or just for looks, you'll need to plug the short leg of the LED into the `-` (ground) pin, and the long leg of the LED into any regular pin (such as 1). Then, use the following code to set up the pin in `OUTPUT` mode and turn the LED on:
 
 ```python
-from robocon.io import *
+from robocon.brain import *
 I = IO()
 
 # If you're not using GPIO pin 1, change this number to whatever pin you're using.
@@ -34,7 +34,7 @@ Try using a loop to make the light turn on and off every 2 seconds. You'll need 
 While your robot hopefully won't be colliding with much, buttons are a good way for a robot to know if it's driven into something. Buttons should be plugged into the - pin and a regular pin (such as 0). Using the `INPUT_PULLUP` mode, you can detect when a button is pressed.
 
 ```python
-from robocon.io import *
+from robocon.brain import *
 import time
 I = IO()
 
@@ -58,7 +58,7 @@ Try making a light turn on or off depending on if a button is pressed. An explan
 Another form of input is a potentiometer or a variable resistor. Potentiometers should be plugged into the +5V, a regular pin (such as 3) and the - pin. Using `INPUT_ANALOG` mode, you can read the voltage output of the resistor (between 0V and 5V).
 
 ```python
-from robocon.io import *
+from robocon.brain import *
 
 I = IO()
 
@@ -75,7 +75,7 @@ while True:
 You can also use retroreflective sensors with your robot's GPIO. This can be configured in the code as follows:
 
 ```python
-from robocon.io import *
+from robocon.brain import *
 import time
 
 I = IO()
