@@ -8,25 +8,18 @@ sidebar:
   If you wish to use a library that is not on the list, please [contact us](mailto:robotics@hrsfc.ac.uk).
 :::
 
-### the following libraries are installed on your robot.
+The following Python libraries are installed and available for use in your projects.
+
 | Package     | Version |
 |-------------|---------|
-| [chardet](https://chardet.readthedocs.io/en/latest/)    | 2018.8.24 |
-| [entrypoints](https://entrypoints.readthedocs.io/en/latest/) | 0.3     |
-| [gevent](https://www.gevent.org/contents.html)   | 21.8.0  |
-| [gpiozero](https://gpiozero.readthedocs.io/en/latest/)   | 1.6.2   |
-| [greenlet](https://greenlet.readthedocs.io/en/latest/)    | 1.1.1   |
-| [keyrings](https://keyring.readthedocs.io/en/latest/)    | 17.1.1  |
-| [numpy](https://numpy.org/doc/1.21)     | 1.21.2  |
-| [picamera](https://picamera.readthedocs.io/en/release-1.13/)   | 1.13    |
-| [pillow](https://pillow.readthedocs.io/en/stable/)     | 8.3.2   |
-| [pluggy](https://pluggy.readthedocs.io/en/stable/)     | 1.0.0   |
-| [pycairo](https://pycairo.readthedocs.io/en/latest/)     | 1.20.1  |
-| [pygobject](https://pygobject.readthedocs.io/en/latest/)   | 3.30.4  |
+| [chardet](https://chardet.readthedocs.io/en/latest/)    | 2022.9.24 |
+| [gpiozero](https://gpiozero.readthedocs.io/en/latest/)   | 2.0.1   |
+| [numpy](https://numpy.org/doc/1.23)     | 1.23.2  |
+| [picamera2](https://pip-assets.raspberrypi.com/categories/652-raspberry-pi-camera-module-2/documents/RP-008156-DS-6-picamera2-manual.pdf)   | 0.3.31    |
+| [Pillow](https://pillow.readthedocs.io/en/stable/)     | 9.4.0   |
 | [pyserial](https://pyserial.readthedocs.io/en/latest/)    | 3.5     |
-| [rpi.gpio](https://sourceforge.net/p/raspberry-gpio-python/wiki/Home/)    | 0.7.0   |
-| [scipy](https://docs.scipy.org/doc/scipy/)       | 1.7.1   |
-| [smbus2](https://pypi.org/project/smbus2/)       | 0.4.1   |
+| [scipy](https://docs.scipy.org/doc/scipy/)       | 1.9.3   |
+| [smbus2](https://pypi.org/project/smbus2/)       | 0.4.2   |
 | [spidev](https://www.sigmdel.ca/michel/ha/rpi/dnld/draft_spidev_doc.pdf)     | 3.5     |
 
 
