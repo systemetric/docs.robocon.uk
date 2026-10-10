@@ -61,7 +61,7 @@ The initial position of servos can be set before your code starts running using 
 
 |Attribute|Values||
 |-|-|-|
-|`servo0_pos`|x ∈ [-100, 100] ∩ ℤ|Initial position of servo 0|
-|`servo1_pos`|x ∈ [-100, 100] ∩ ℤ|Initial position of servo 1|
-|`servo2_pos`|x ∈ [-100, 100] ∩ ℤ|Initial position of servo 2|
-|`servo3_pos`|x ∈ [-100, 100] ∩ ℤ|Initial position of servo 3|
+|`servo0_pos`|x ∈ ℤ|Initial position of servo 0|
+|`servo1_pos`|x ∈ ℤ|Initial position of servo 1|
+|`servo2_pos`|x ∈ ℤ|Initial position of servo 2|
+|`servo3_pos`|x ∈ ℤ|Initial position of servo 3|
