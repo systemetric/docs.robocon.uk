@@ -56,21 +56,25 @@ You do not need to use the marker ids themselves for your calculations. Use `mar
 
 Every April Tag has a code:
 
-- April tags 0-31 will be used for supplies. Although only 4 supply crates and 4 supply drops used in each round, there are another 19 supply crates and 3 supply drops spare in case some get damaged.
+- April tags 0-20 will be used for power stations within the arena.
+
+- April tags 100, 106, 112, 118 are used for refuel stations for their
+    respective zones, and replace an arena wall marker.
 
 - April tags 100+ will be around the arena on the walls. See the rules for
-  specifics on where around the rules they will be placed
+  specifics on where around the rules they will be placed. Some of these
+  markers are for refuel stations, see further details in the table below.
 
 - You do not need to use the marker numbers, and can instead use marker.type and marker.owning_team
 
-| Function    | Codes  |      |
-| -------- | ----- | ----
-| Supply crates | 0 - 23 |
-| Supply drops | 24 - 31 |
-| Trees | 76 - 91 |
-| Arena walls Marker   | 100 - 123  |
-
-
+|Function|Codes|
+|-|-|
+|Power Station|0 - 20|
+|Refuel Station 0 (Red)|100|
+|Refuel Station 1 (Yellow)|106|
+|Refuel Station 2 (Green)|112|
+|Refuel Station 3 (Blue)|118|
+|Arena Walls Marker|100 - 123|
 
 ## Blockly
 

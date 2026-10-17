@@ -13,9 +13,9 @@ Your code will probably need to look for different markers depending on the zone
 | **Team** | **Code** |
 | --- | --- |
 | Red | `robocon.TEAM.RED` |
-| Blue | `robocon.TEAM.BLUE` |
-| Green | `robocon.TEAM.GREEN` |
 | Yellow | `robocon.TEAM.YELLOW` |
+| Green | `robocon.TEAM.GREEN` |
+| Blue | `robocon.TEAM.BLUE` |
 
 Here's an example:
 

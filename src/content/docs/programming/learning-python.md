@@ -18,7 +18,3 @@ There are many resources online for learning Python, here are a few good ones th
 * A number of tutorials for beginners are linked to from [here](http://wiki.python.org/moin/BeginnersGuide/NonProgrammers).
 * [Learn X in Y minutes](https://learnxinyminutes.com/docs/python/) is quite nice if you've programmed before in another language and just want to learn the syntax. (Tip: If you're trying to complete the challenges, here's where we say you can learn Python in "Y" minutes)
 * [The Official Docs](https://docs.python.org/) can be handy, but a little dense! Give them a shot, but don't worry if you can't find what you are looking for.
-
-:::warning
-Running code on your brain may have unintended side effects if it does not call `import robot`, and doesn't create a robot object (`R = robot.Robot()`). Its best to leave those lines in, even if you don't need to run anything related to the hardware on the brain. 
-:::

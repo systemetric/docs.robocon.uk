@@ -34,6 +34,9 @@ print(I.enable_12v) # Outputs "False"
 ## Toggling 5v power
 The BrainBox supplied 5v power to multiple outputs. These are the Servos (all 0-3), as well as the 5v GPIO pin. You can disable these similarly to the 12v power by using the following code:
 
+5v power is turned on by default when the start button is pressed, or when your
+code is started manually from the web editor.
+
 ```python
 from robocon.brain import IO
 I = IO()
@@ -44,7 +47,7 @@ I.enable_5v = False
 
 # ...Rest of your code
 ```
-This will disable the Servo ports as well as the 5v GPIO pin until you re-enable them using `I.enable_5v = True`.
+This will disable the servo ports as well as the 5v GPIO pin until you re-enable them using `I.enable_5v = True`.
 You can also check whether the 5v is currently enabled or disabled.
 ```python
 from robocon.brain import IO
