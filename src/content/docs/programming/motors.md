@@ -38,10 +38,10 @@ from robocon.brain import IO
 
 I = IO()
 
-# set motor 1 to 60% power
+# set motor 0 to 60% power
 I.motors[0] = 60
 
-# set motor 2 to 60% power in the backwards direction
+# set motor 1 to 60% power in the backwards direction
 I.motors[1] = -60
 
 # turn both motors off

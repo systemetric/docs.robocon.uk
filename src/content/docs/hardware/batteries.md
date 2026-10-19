@@ -35,7 +35,7 @@ If you are not going to use the batteries for a long period of time, such as mor
 
 To use your batteries, you must connect them to the **Hills Road RoboCon** BrainBox. Do not tamper with the cable or connect the batteries to anything other than the power board (or the charger when charging).
 
-During operation, the battery is protected by over-current protection by a regulator on the power board. If any equipment is short circuited, the over-current protection will activate - protecting the battery. There is a fuse placed inline with the power cord. If you suspect the fuse has gone something _very_ wrong has happened. This is an important safety feature.
+During operation, the battery is protected by over-current protection by a regulator on the power board. If any equipment is short circuited, the over-current protection will activate - protecting the battery. On generation 2 BrainBoxes, there is a fuse placed inline with the power cord. If you suspect the fuse has gone, something _very_ wrong has happened. This is an important safety feature.
 
 :::danger
 Do **NOT**, under any circumstances, bypass or replace the fuse. If the fuse has blown then the power board has failed and **must** be replaced for safe operation. If you suspect the fuse has blown then please contact [robotics@hrsfc.ac.uk](mailto:robotics@hrsfc.ac.uk) straight away.

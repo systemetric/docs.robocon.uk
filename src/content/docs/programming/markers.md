@@ -6,7 +6,6 @@ sidebar:
 ---
 You can access (and print) this year's markers [here](/assets/markers.pdf).
 
-- Supply crates markers are on page 1-24
-- Supply drop markers are on pages 25-32
-- Tree markers are on pages 33-48
-- Arena wall markers are from page 48 onwards
+- Power stations are numbered 0-20 inclusive, pages: 1-21.
+- Refuel stations are numbered 100, 106, 112, and 118, pages: 22, 28, 34, 40.
+- Arena wall markers are numbered 100-123 inclusive, excluding those that are refuel        stations, pages: 22-45, excluding refuel station markers.

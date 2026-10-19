@@ -9,7 +9,7 @@ We recommend you use the code editor that's included with Shepherd to program yo
 Assuming you've [connected to your robot](/tools/connecting), head to <http://robot.local/editor> or click the orange
 editor button on the Shepherd homepage.
 
-![Upload Button](/images/shepherd-editor.png)
+![Upload Button](/images/shepherd-editor.jpg)
 
 ## The Editor Interface
 
@@ -60,7 +60,7 @@ Your new project will open in the editor. See the sections below for more inform
 
 ## Python Projects
 
-Python projects provide a powerful development tool with syntax highlighting and code completion for the standard Python libraries and also the `robocon` module. If you are interested, it uses the text editor that powers Visual Studio Code.
+Python projects provide a powerful development tool with syntax highlighting, standard Python libraries and also the `robocon` module. If you are interested, it uses the text editor that powers Visual Studio Code.
 
 ## Blockly Projects
 
@@ -68,7 +68,26 @@ Google's Blockly is a programming environment similar to Scratch that allows you
 
 ## Project Attributes
 
-In the run configuration dialog (cog icon, top right-hand corner), project attributes can be configured. These control various aspects of how a project is run, including initial servo positions and power state. See their respective sections of this documentation to find out more information.
+In the settings dialog (cog icon, top right-hand corner), project attributes can be configured. These control various aspects of how a project is run, including initial servo positions and power state. See their respective sections of this documentation to find out more information.
+
+:::tip
+If you wish to take advantage of project attributes, but are not using the web editor interface, the syntax for project attributes is: `#::sheep:<KEY>:<VALUE>`. These should be placed sequentially, on individual lines, at the very top of a source file. The web interface will not show these lines, and will use the settings dialog instead.
+:::
+
+## Updating your team image
+
+When the robot boots, it loads a default image which is displayed until the robot takes a picture, in the arena these images may be displayed on an overhead projector. You can change the default image.
+
+1. Produce your image in JPEG format.
+2. While connected to the BrainBox, navigate to <http://robot.local> on the web browser and navigate to the editor.
+3. Open the settings dialog via the settings cog in the top-right corner.
+4. Select "upload team image", select the JPEG image you produced, and press OK.
+5. Rebooot your robot using the power switch.
+6. Reconnect your robot and go back to the editor, wait a few seconds and you should see your new logo!
+
+:::tip
+We may ask that your image includes either a Team Name or your institution (e.g. Systemetric or Hills Road Sixth Form College) to assist the Marshalls, but if you have a iconic robot design then we may waive this rule
+:::
 
 ## Other
 
