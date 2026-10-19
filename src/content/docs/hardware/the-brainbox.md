@@ -26,14 +26,14 @@ The specifications for the motor board can be found [here](/assets/CytronBoardDo
 | Operating Voltage         | 12V           |
 
 :::tip
-You can toggle the 12V which allows you to turn 12V devices on and off easily. However, this will also cut power to the motor board.
+You can toggle the 12V which allows you to turn 12V devices on and off easily. However, on generation 2 BrainBoxes only, this will also cut power to the motor board.
 :::
 
 ## How to turn everything off
 When you are done for the day, press the power button, the user LED will flash rapidly, when this turns off you may unplug the battery. 
 
 ## USB's
-On the new brainBox, there is only one USB port. If you want to use something that requires a USB port such as a USB camera, you will need to get your own USB hub.  
+The generation 3 BrainBox only has one USB port. If you want to use something that requires a USB port such as a USB camera, you will need to get your own USB hub.
  
 ## GPIO
 
@@ -43,7 +43,7 @@ All of the BrainBox's GPIO pins are connected in-series with a 1K Ohm resistor, 
 
 Nominally they operate at 5V but depending on your load the true output will vary. You can calculate the voltage you will get across your load by measuring its resistance, then doing the sum:
 
-(5*Load_resistance)/(Load_resistance+1000)   
+(5*Load_resistance)/(Load_resistance+1000)
 
 ### GPIO - In
 

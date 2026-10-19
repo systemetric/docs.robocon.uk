@@ -2,7 +2,7 @@
 title: Collecting Images and Raw Analysis
 category: Tools
 sidebar:
-  order: 8
+  order: 7
 ---
 Every time the robot takes a picture it is updated on the web interface, during development it is occasionally useful to be able to also keep a log of pictures that have been analysed to check the camera focus, motion blur etc.
 
