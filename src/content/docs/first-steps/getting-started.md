@@ -4,7 +4,7 @@ category: None
 sidebar:
   order: 1
 ---
-Welcome to the docs for **Robocon 2026**!
+Welcome to the docs for **Robocon 2027**!
 
 ![RoboCon2027 Game Header](/images/RoboCon2027-Header.jpg)
 
