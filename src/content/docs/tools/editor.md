@@ -17,7 +17,7 @@ You should now see the editor interface. _(yours will look slightly different to
 
 ![Editor Interface](/images/shepherd-editor-interface.jpg)
 
-The **<span style="color: #ff0000">red sidebar</span>** is the **projects panel**. This is where you can access or
+The **<span style="color: #af0000">red sidebar</span>** is the **projects panel**. This is where you can access or
 export your existing projects, and create or import new ones. Clicking on a project in this list will open it in the
 editor.
 
@@ -29,12 +29,12 @@ editor.
     - The **export button** allowing you to save the project on your computer as a backup.
     - The **delete project button**, deleting a project if you no longer need it. This cannot be undone.
 
-The **<span style="color: #ffff00">yellow toolbar</span>** is the **tab list**. This is where you can find all your open
+The **<span style="color: #afaf00">yellow toolbar</span>** is the **tab list**. This is where you can find all your open
 projects. If your project has a **white circle** at the end of the tab, it means you have **unsaved** content. Projects are
 auto-saved after you stop editing them or when you run your project, but you can also manually save by pressing the **CTRL**
 and **S** keys simultaneously.
 
-The **<span style="color: #0000ff">blue sidebar</span>** is the **logs panel**. This is where you can see the output
+The **<span style="color: #7070af">blue sidebar</span>** is the **logs panel**. This is where you can see the output
 from your robot when you run your program.
 
 - In the top-right corner of the logs panel are:
@@ -42,7 +42,7 @@ from your robot when you run your program.
     - The **stop button**. This will stop any code that is currently running on your robot.
     - The **settings button**. This opens the [settings panel](#using-the-settings-panel).
 
-The **<span style="color:#00ff00">green section</span>** in the middle is the **editor**. This will be different depending on whether you're editing a Python or a
+The **<span style="color:#00af00">green section</span>** in the middle is the **editor**. This will be different depending on whether you're editing a Python or a
 Blockly project.
 
 ## Creating a new project
