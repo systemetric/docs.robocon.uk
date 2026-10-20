@@ -47,8 +47,7 @@ Blockly project.
 
 ## Creating a new project
 
-Click on the **create project button** (marked in **<span style="color: #0094FF">blue</span>** in the above screenshot).
-The create project dialog will appear:
+Click on the **create project button**. The create project dialog will appear:
 
 ![Create Project Interface](/images/shepherd-editor-create-project.png)
 
