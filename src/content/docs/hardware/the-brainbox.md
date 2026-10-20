@@ -5,10 +5,25 @@ sidebar:
   order: 2
 ---
 
-The BrainBox is the core of the kit which we provide. In it is all of the electronics and software you need to power a robot. Lets start by turning it on. Take a battery from the kit and plug it into the yellow socket labelled battery, then take a red "power button" and connect that to the black connector along the side of the BrainBox. The battery and start button are both labelled on the red surface of the BrainBox. 
-![The brain box](/images/angled.png)
+The BrainBox is the core of the kit which we provide. In it is all of the electronics and software you need to power a robot. Lets start by turning it on. Take a battery from the kit and plug it into the yellow socket labelled battery, then take a red "power button" and connect that to the black connector along the side of the BrainBox. The battery and start button are both labelled on the red surface of the BrainBox.
+
+## BrainBox Generations
+
+There are multiple generations of BrainBox available, most teams will have the newer
+generation 3 BrainBox, some teams may have a generation 2 BrainBox. Some software and hardware features are only present on certain generations of BrainBox, and this is noted in accompanying documentation pages.
+
+The image below shows a generation 2 "GreenGiant" BrainBox. These were originally green, as the name would suggest, but the faceplates have been recently changed to address various inaccuracies in the design, and to closer resemble the generation 3 BrainBoxes.
+
+![Generation 2 BrainBox](/images/angled2.png)
+
+The image below shows a generation 3 "PiLow" BrainBox. This is the latest generation of BrainBox, which is more compact than the generation 2 BrainBox, while still providing a similar set of features.
+
+![Generation 3 BrainBox](/images/angled3.png)
+
 ## How to turn everything on
-Pressing the start button will cause the battery status LEDs on the front of the BrainBox flash in an upwards direction and the power LED turns green. When the user light starts flashing blue your BrainBox is ready to run code. You can now turn connect to your robot. The user LED will go solid while code is running. 
+
+Pressing the start button will cause the battery status LEDs on the front of the BrainBox flash in an upwards direction and the power LED turns green. When the user light starts flashing blue your BrainBox is ready to run code. You can now turn connect to your robot. The user LED will go solid while code is running. On generation 3 BrainBoxes the light labelled "error/wait" will be turned on when code is not running, or in the case of a hardware fault.
+
 ## Power
 
 The BrainBox distributes power to the robot from the battery. It provides both 12V and 5V power out. All power must go through the BrainBox and the fuse should never be replaced.
@@ -17,7 +32,7 @@ The On/Off switch also plugs into the BrainBox as well as the Start button which
 
 ## Motors & 12V Power
 
-The specifications for the motor board can be found [here](/assets/CytronBoardDocs.pdf), however to summarize:
+The specifications for the motor board on generation 2 BrainBoxes can be found [here](/assets/CytronBoardDocs.pdf), however to summarize:
 
 | Condition per channel     | Maximum Value |
 | ------------------------- | ------------- |
@@ -71,7 +86,7 @@ The PWM pins ranges:
 | 178   | 2.39ms |
 | \-178 | 0.61ms |
 
-## Pin Out
+## Pin Out (Generation 3)
 
 ### IO
 
