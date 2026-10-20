@@ -40,6 +40,14 @@ The specifications for the motor board on generation 2 BrainBoxes can be found [
 | Peak current (10 seconds) | 30A           |
 | Operating Voltage         | 12V           |
 
+:::note
+Generation 2 BrainBoxes are fitted with an external 20A fuse, continuous current draw should not exceed 20A.
+:::
+
+For a generation 3 BrainBox:
+
+- Up to 10A can be drawn on the 12V output port.
+- Each motor channel can draw up to 6.5A individually, they can draw up to 10A combined.
 :::tip
 You can toggle the 12V which allows you to turn 12V devices on and off easily. However, on generation 2 BrainBoxes only, this will also cut power to the motor board.
 :::
