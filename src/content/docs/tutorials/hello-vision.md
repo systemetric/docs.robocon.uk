@@ -47,7 +47,7 @@ import time
 C = Camera()
 
 while True:
-    markers = C.camera()
+    markers = C.capture()
     print(len(markers))
     time.sleep(2)
 ```
