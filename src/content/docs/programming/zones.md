@@ -8,14 +8,14 @@ Your code will probably need to look for different markers depending on the zone
 
 ## Python
 
-`robocon.zone` will indicate the starting zone of your robot, this is the same as your team colour in the arena.
+`robocon.zone` will indicate the starting zone of your robot, this is the same as your team colour in the arena. Zones also have names, which are not used in code, but may be used in arena commentary and game backstory.
 
-| **Team** | **Code** |
-| --- | --- |
-| Red | `robocon.TEAM.RED` |
-| Yellow | `robocon.TEAM.YELLOW` |
-| Green | `robocon.TEAM.GREEN` |
-| Blue | `robocon.TEAM.BLUE` |
+|**Team**|**Code**|**Name**|
+|-|-|-|
+|Red|`robocon.TEAM.RED`|Flemish Gas|
+|Yellow|`robocon.TEAM.YELLOW`|Mollusc|
+|Green|`robocon.TEAM.GREEN`|Kraken Fission|
+|Blue|`robocon.TEAM.BLUE`|Cheval|
 
 Here's an example:
 

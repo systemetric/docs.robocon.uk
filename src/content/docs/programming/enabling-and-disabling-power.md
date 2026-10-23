@@ -59,4 +59,4 @@ print(I.enable_5v) # Outputs "False"
 
 ## Enabling or disabling power by default.
 
-The BrainBox can automatically enable/disable the 5v and 12v power before your code starts running using the project attributes `enable_5v` and `enable_12v` respectively, setting them to either `true` or `false` as desired.
+The BrainBox can automatically enable/disable the 5v and 12v power before your code starts running using the project attributes `enable_5v` and `enable_12v` respectively, setting them to either `True` or `False` as desired.

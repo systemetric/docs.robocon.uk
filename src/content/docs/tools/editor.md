@@ -9,47 +9,45 @@ We recommend you use the code editor that's included with Shepherd to program yo
 Assuming you've [connected to your robot](/tools/connecting), head to <http://robot.local/editor> or click the orange
 editor button on the Shepherd homepage.
 
-![Upload Button](/images/shepherd-editor.png)
+![Editor Button](/images/shepherd-editor.jpg)
 
 ## The Editor Interface
 
 You should now see the editor interface. _(yours will look slightly different to this)_
 
-![Annotated Editor Interface](/images/shepherd-editor-annotated.png)
+![Editor Interface](/images/shepherd-editor-interface.jpg)
 
-The **<span style="color: #00A510">green sidebar</span>** is the **projects panel**. This is where you can access or
+The **<span style="color: #af0000">red sidebar</span>** is the **projects panel**. This is where you can access or
 export your existing projects, and create or import new ones. Clicking on a project in this list will open it in the
 editor.
 
-* The **<span style="color: #FF6A00">orange button</span>** is the **import button**. This lets you load a saved project
-  into the editor.
-* The **<span style="color: #0094FF">blue button</span>** is the **create project button**. This is how you
-  [create a project](#creating-a-new-project).
-* The **<span style="color: #FF0000">red button</span>** is the **export button**. This allows you to save the project
-  to your computer as a backup.
-* The **<span style="color: #FF00DC">pink button</span>** is the **delete project button**. This will allow you to
-  delete a project if you don't want it. There is no way to undo this action.
+- In the top-right corner of the projects panel are:
+    - The **import button**, allowing you to load saved projects into the editor.
+    - The **create project** button, which [creates a project](#creating-a-new-project).
 
-The **<span style="color: #FFD800">yellow toolbar</span>** is the **tab list**. This is where you can find all your open
+- On each project listed in the projects panel, there is:
+    - The **export button** allowing you to save the project on your computer as a backup.
+    - The **delete project button**, deleting a project if you no longer need it. This cannot be undone.
+
+The **<span style="color: #afaf00">yellow toolbar</span>** is the **tab list**. This is where you can find all your open
 projects. If your project has a **white circle** at the end of the tab, it means you have **unsaved** content. Projects are
 auto-saved after you stop editing them or when you run your project, but you can also manually save by pressing the **CTRL**
 and **S** keys simultaneously.
 
-The **<span style="color: #007F7F">teal sidebar</span>** is the **logs panel**. This is where you can see the output
+The **<span style="color: #7070af">blue sidebar</span>** is the **logs panel**. This is where you can see the output
 from your robot when you run your program.
 
-* The **<span style="color: #006327">dark green button</span>** is the **run button**. Pressing this will prompt you to
-  save your project to your computer, just as a backup, and then run your code on the robot.
-* The **<span style="color: #630000">dark red button</span>** is the **stop button**. Pressing this will force the robot
-  to stop what it's doing, useful if your robot is out of control.
+- In the top-right corner of the logs panel are:
+    - The **run button**. This will save thr project to your computer as a backup, and will then run the project code on your robot.
+    - The **stop button**. This will stop any code that is currently running on your robot.
+    - The **settings button**. This opens the [settings panel](#using-the-settings-panel).
 
-The **main section** in the middle is the **editor**. This will be different depending on whether you're editing a Python or a
+The **<span style="color:#00af00">green section</span>** in the middle is the **editor**. This will be different depending on whether you're editing a Python or a
 Blockly project.
 
 ## Creating a new project
 
-Click on the **create project button** (marked in **<span style="color: #0094FF">blue</span>** in the above screenshot).
-The create project dialog will appear:
+Click on the **create project button**. The create project dialog will appear:
 
 ![Create Project Interface](/images/shepherd-editor-create-project.png)
 
@@ -60,15 +58,57 @@ Your new project will open in the editor. See the sections below for more inform
 
 ## Python Projects
 
-Python projects provide a powerful development tool with syntax highlighting and code completion for the standard Python libraries and also the `robocon` module. If you are interested, it uses the text editor that powers Visual Studio Code.
+Python projects provide a powerful development tool with syntax highlighting, standard Python libraries and also the `robocon` module. If you are interested, it uses the text editor that powers Visual Studio Code.
 
 ## Blockly Projects
 
 Google's Blockly is a programming environment similar to Scratch that allows you to program your robot with blocks. You still have access to all the features of the robot so you are not disadvantaged if you decide to use this over Python.
 
-## Project Attributes
+## Using the Settings Panel
 
-In the run configuration dialog (cog icon, top right-hand corner), project attributes can be configured. These control various aspects of how a project is run, including initial servo positions and power state. See their respective sections of this documentation to find out more information.
+The settings panel controls various aspects of how your code is run:
+
+![Settings Panel Interface](/images/shepherd-settings-panel.png)
+
+The settings panel allows you to configure:
+
+- **Zone**: the coloured zone in which the robot is being run, this can be
+    used to test the behaviour of your robot when run in different zones
+    of the arena.
+
+- **Mode**: the mode in which your code is run, "competition" mode adds a
+    180 second time restriction before your code will be terminated, as it
+    will in the competition arena. "development" does not have this restriction.
+
+- **Project Attributes**: project-specific settings, see [project attributes](#project-attributes)
+    for more information.
+
+The settings panel also has buttons for [updating your team image](#updating-your-team-image), and [patching your robot](/tools/patching-the-robot).
+
+### Project Attributes
+
+In the settings panel, project attributes can be configured. These control various aspects of how a project is run, including initial servo positions and power state. See their respective sections of this documentation to find out more information.
+
+Configuring project attributes is not available if you do not have a project selected in the editor.
+
+:::tip
+If you wish to take advantage of project attributes, but are not using the web editor interface, the syntax for project attributes is: `#::sheep:<KEY>:<VALUE>`. These should be placed sequentially, on individual lines, at the very top of a source file. The web interface will not show these lines, and will use the settings dialog instead.
+:::
+
+## Updating your team image
+
+When the robot boots, it loads a default image which is displayed until the robot takes a picture, in the arena these images may be displayed on an overhead projector. You can change the default image.
+
+1. Produce your image in JPEG format.
+2. While connected to the BrainBox, navigate to <http://robot.local> on the web browser and navigate to the editor.
+3. Open the settings dialog via the settings cog in the top-right corner.
+4. Select "upload team image", select the JPEG image you produced, and press OK.
+5. Rebooot your robot using the power switch.
+6. Reconnect your robot and go back to the editor, wait a few seconds and you should see your new logo!
+
+:::tip
+We may ask that your image includes either a Team Name or your institution (e.g. Systemetric or Hills Road Sixth Form College) to assist the Marshalls, but if you have a iconic robot design then we may waive this rule
+:::
 
 ## Other
 
