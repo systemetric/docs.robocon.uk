@@ -4,9 +4,9 @@ category: None
 sidebar:
   order: 1
 ---
-Welcome to the docs for **Robocon 2026**!
+Welcome to the docs for **Robocon 2027**!
 
-![RoboCon2025 Game Header](/images/RoboCon2026-Header.png)
+![RoboCon2027 Game Header](/images/RoboCon2027-Header.jpg)
 
 If you haven't already, it's a good idea to take a look at the [rules](/assets/Rulebook.pdf) for this year's competition.
 
@@ -39,5 +39,5 @@ Handling batteries incorrectly can be dangerous. Make sure you follow these [saf
 :::
 
 :::tip
-You can also access these docs from your robot. Go to `http://robot.local/docs` when you're connected to your robot.
+You can also access these docs from your robot. Go to <http://robot.local/docs> when you're connected to your robot.
 :::

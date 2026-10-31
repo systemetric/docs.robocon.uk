@@ -11,6 +11,10 @@ Although the I2C and UART are connected to the Raspberry Pi, they operate at 5.1
 
 ## I2C
 
+:::note
+I2C expansion is only available on generation 2 BrainBoxes, where the is a connector marked "I2C". If your BrainBox does not have this connector, you are using a newer 3rd generation BrainBox, you should use USB peripherals instead of relying on I2C.
+:::
+
 I2C is a great way to a components to your BrainBox. Look at the datasheet for your device which you would like to connect and connect the SDA and SDL to the appropriate pins. You should now be able to send data to your device by using the [SMBus2 python library](https://pypi.org/project/smbus2/).
 
 :::caution
@@ -21,7 +25,7 @@ If you are interested in the I2C protocol there is a good guide to find out more
 
 ## USB
 
-You can use USB devices using the [`serial`](https://pyserial.readthedocs.io/en/latest/shortintro.html) library. The connection will probably open on something similar to `dev/ttyUSB0` but if you can't find it where you expect then connect the device to a Raspberry Pi running a recent OS image and observe where it appears.
+You can use USB devices using the [`serial`](https://pyserial.readthedocs.io/en/latest/shortintro.html) library. The connection will probably open on something similar to `/dev/ttyUSB0` but if you can't find it where you expect then connect the device to a Raspberry Pi running a recent OS image and observe where it appears.
 
 ## UART
 

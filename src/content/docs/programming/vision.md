@@ -139,36 +139,35 @@ else:
 
 A `Marker` object contains information about a _detected_ marker. It has the following attributes:
 
-| Attribute                   | What it does                                                                                                                                                                                                                                         |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `dist`                      | The distance to the Marker from the camera in meters.                                                                                                                                                                                                |
-| `bearing`                   | How far the **BrainBox** would have to rotate to face that **Marker** in degrees                                                                                                                                                                     |
-| `bearing.x`                 | The **up/down** bearing. 0 is vertically bellow the camera                                                                                                                                                                                           |
-| `bearing.y`                 | The **left/right** bearing. 0 is straight ahead from the camera                                                                                                                                                                                      |
-| `rotation`                  | How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position                                                                                                |
-| `rotation.x`                | The  **roll** of the marker                                                                                                                                                                                                                          |
-| `rotation.y`                | The **pitch** of the marker                                                                                                                                                                                                                          |
-| `rotation.z`                | The **yaw** of the marker                                                                                                                                                                                                                            |
-| `info`                      | An object with various information about the marker                                                                                                                                                                                                  |
-| `info.id`                   | The ID number of the marker                                                                                                                                                                                                                          |
-| `info.size`                 | The length of the black edge of the marker in meters                                                                                                                                                                                                 |
-| `info.type`                 | Returns `ARENA` for a wall marker and a tree marker, or `TARGET` for supply crates and supply drop markers. |
-| `info.target_type`          | Returns if the marker is a Supply create or Supply drop marker. If it's none of these, `NONE` will be returned. For example, a supply crate marker would return `TARGET_TYPE.SUPPLY_CRATE`. However a tree marker would return `NONE`. |
-| `info.bounding_box_colour`  | A tuple describing the colour which is drawn around the marker in the preview image (Blue, Red, Green)                                                                                                                                               |
-| `detection`                 | Technical information which has been inferred from the image.                                                                                                                                                                                        |
-| `detection.tag_family`      | The family of AprilTag which is detected. RoboCon currently only uses `tag36h11`.                                                                                                                                                                    |
-| `detection.tag_id`          | The ID number of the detected marker. Aliased by `marker.info.id`.                                                                                                                                                                                      |
-| `detection.hamming`         | The number of bits which were corrected. The detector cannon detect tags with a hamming distance greater than 2.                                                                                                                                     |
-| `detection.decision_margin` | A measure of the quality of the binary decoding process; the average difference between the intensity of a data bit versus the decision threshold. Higher numbers roughly indicate better decodes. Only effective for tags which appear small.       |
-| `detection.homography`      | The 3x3 homography matrix describing the projection from an "ideal" tag (with corners at (-1,1), (1,1), (1,-1), and (-1, -1)) to pixels in the image.                                                                                                |
-| `detection.center`          | The image pixel coordinates of the center of the marker.                                                                                                                                                                                             |
-| `detection.corners`         | The image pixel coordinates of corners of the detected marker                                                                                                                                                                                        |
-| `detection.pose_R`          | The 3x3 Rotational matrix which describes the rotation of the marker relative to the origin.                                                                                                                                                         |
-| `detection.pose_T`          | The 1x3 translation vector of the marker in meters.                                                                                                                                                                                                  |
-| `detection.pose_err`        | The uncertainty of the detection in meters. This number can vary massively between detections depending on if local minima were bypassed. See [Apriltag: A robust and flexible visual fiducial system](https://ieeexplore.ieee.org/document/5979561) |
-| `dectection.dist`           | The distance to the marker in meters.                                                                                                                                                                                                                |
-| `detection.rotation`        | How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position.                                                                                               |
-| `detection.bearing`         | How far the **BrainBox** would have to rotate to face that **Marker** in degrees.                                                                                                                                                                    |
+|Attribute|What it does|
+|-|-|
+|`dist`|The distance to the Marker from the camera in meters.|
+|`bearing`|How far the **BrainBox** would have to rotate to face that **Marker** in degrees|
+|`bearing.x`|The **up/down** bearing. 0 is vertically bellow the camera|
+|`bearing.y`|The **left/right** bearing. 0 is straight ahead from the camera|
+|`rotation`|How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position|
+|`rotation.x`|The  **roll** of the marker|
+|`rotation.y`|The **pitch** of the marker|
+|`rotation.z`|The **yaw** of the marker|
+|`info`|An object with various information about the marker|
+|`info.id`|The ID number of the marker|
+|`info.size`|The length of the black edge of the marker in meters|
+|`info.type`|Returns `ARENA` for a wall marker, `REFUEL_STATION` for refuel station markers, and `POWER_STATION` for power station markers.|
+|`info.bounding_box_colour`|A tuple describing the colour which is drawn around the marker in the preview image (Blue, Red, Green)|
+|`detection`|Technical information which has been inferred from the image.|
+|`detection.tag_family`|The family of AprilTag which is detected. RoboCon currently only uses `tag36h11`.|
+|`detection.tag_id`|The ID number of the detected marker. Aliased by `marker.info.id`.|
+|`detection.hamming`|The number of bits which were corrected. The detector cannon detect tags with a hamming distance greater than 2.|
+|`detection.decision_margin`|A measure of the quality of the binary decoding process; the average difference between the intensity of a data bit versus the decision threshold. Higher numbers roughly indicate better decodes. Only effective for tags which appear small.|
+|`detection.homography`|The 3x3 homography matrix describing the projection from an "ideal" tag (with corners at (-1,1), (1,1), (1,-1), and (-1, -1)) to pixels in the image.|
+|`detection.center`|The image pixel coordinates of the center of the marker.|
+|`detection.corners`|The image pixel coordinates of corners of the detected marker|
+|`detection.pose_R`|The 3x3 Rotational matrix which describes the rotation of the marker relative to the origin.|
+|`detection.pose_T`|The 1x3 translation vector of the marker in meters.|
+|`detection.pose_err`|The uncertainty of the detection in meters. This number can vary massively between detections depending on if local minima were bypassed. See [Apriltag: A robust and flexible visual fiducial system](https://ieeexplore.ieee.org/document/5979561)|
+|`detection.dist`|The distance to the marker in meters.|
+|`detection.rotation`|How much the **Marker** would need to be rotated to face the **BrainBox**. `(0,0,0)` Is if the marker was facing the BrainBox in the upright position.|
+|`detection.bearing`|How far the **BrainBox** would have to rotate to face that **Marker** in degrees.|
 
 :::tip
 Axes are all defined relative to the camera not your robot. Since we have
@@ -176,7 +175,7 @@ no way to know how you've mounted your camera. You may need to account for this.
 :::
 
 :::tip
-You can use `TARGET_TYPE`, `MARKER_TYPE`, and `TEAM` from `robot`, for example...
+You can use `TARGET_TYPE`, and `MARKER_TYPE` from `robocon.game`, for example..
 
 ```python
 from robocon.vision import Camera
@@ -187,10 +186,10 @@ C = Camera()
 markers = C.capture()
 
 for marker in markers:
-    if marker.info.type == MARKER_TYPE.TARGET and marker.info.target_type == TARGET_TYPE.SUPPLY_DROP:
-        print(f"Marker {marker.info.id} is a supply drop")
-    elif marker.info.target_type == TARGET_TYPE.SUPPLY_CRATE:
-        print(f"Marker {marker.info.id} is a supply crate")
+    if marker.info.type == MARKER_TYPE.REFUEL_STATION:
+        print(f"Marker {marker.info.id} is a refuel station")
+    elif marker.info.type == MARKER_TYPE.POWER_STATION:
+        print(f"Marker {marker.info.id} is a power station")
 ```
 :::
 
@@ -212,13 +211,21 @@ C.phy.res = (1920, 1440)
 print(f"The current res is set to {C.phy.res}")
 ```
 
-You must use one of the following resolutions:
+For generation 2 BrainBoxes (sensor `imx219`), you must use one of the following resolutions:
 
-- `(640, 480)` _(default)_
+- `(640, 480)
 - `(1296, 736)`
 - `(1296, 976)`
+- `(1640, 1232)` _(default)_
 - `(1920, 1088)`
 - `(1920, 1440)`
+
+For generation 3 BrainBoxes (sensor `ov5647`), you must one of the following resolutions:
+
+- `(640, 480)`
+- `(1292, 972)` _(default)_
+- `(1920, 1080)`
+- `(2592, 1944)`
 
 :::tip
 Using a higher resolution will increase the amount of time it takes to process the image, but you may be able to see more. Using a smaller resolution will be faster, but markers further away may stop being visible.

@@ -25,11 +25,6 @@ When started, using the start button the robot will default to running the last 
 3. The file will be automatically copied from the USB stick
 4. Press the black start button
 
-:::caution
-Code copied from USB sticks is not [Linted](https://en.wikipedia.org/wiki/Lint_%28software%29), sufficiently broken code may crash not just the user code, but also the web interface preventing the robot from reaching "Blinky". See [troubleshooting](/tools/troubleshooting.html#troubleshooting) for details about what the LEDs mean. It is highly recommended for users to export working code from the editor to the USB stick rather than editing code directly. See [troubleshooting](/tools/troubleshooting.html#the-brainbox-appears-to-power-up-but-i-can-t-connect-to-the-website-and-the-blue-led-lights-but-never-starts-flashing) for how to recover a robot which does not boot to Blinky.
-
-:::
-
 ## Getting Logs
 
 When running your robot code you can see the logs from the robot in the editor. Sometimes it's useful to be able to view the logs later to analyse what happened.
@@ -79,16 +74,3 @@ Every time the robot takes a picture it is updated on the web interface, during 
 4. Remember to fully shut down the robot before removing the USB stick
    WARNING: Collecting all images may slow down the processing time from your robot - Use with care!
 
-## Updating your team image
-
-When the robot boots, it loads a default image which is displayed until the robot takes a picture, in the arena these images are displayed on an overhead projector. You can change the default image.
-
-1. Save your Image in jpeg format onto the Laptops in the very useful boxes provided
-2. While connected to the BrainBox, navigate to robot.local on the web browser and go to the editor
-3. Go to settings - in the top-right hand corner - and then upload your image.
-4. Power off you robot
-5. Reconnect your robot and go back to the editor, wait a few seconds and you should see your new logo!
-
-:::tip
-We may ask that your image includes either a Team Name or your institution (e.g. Systemetric or Hills Road Sixth Form College) to assist the Marshalls, but if you have a iconic robot design then we may waive this rule
-:::

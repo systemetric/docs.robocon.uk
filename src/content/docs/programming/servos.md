@@ -25,6 +25,10 @@ I.servos[0] = 50
 For example, to control servo 3 instead, replace `servos[0]` with `servos[3]`. Again, remember that indexes start at 0.
 :::
 
+:::note
+Servo positions are weird, 0% refers to a "neutral" position that is typically the centre of movement. 100%/-100% may also not correspond to the start/end positions of the servo respectively, for this reason, you can set the position beyond 100%/-100%, though setting too far may damage your servos!
+:::
+
 Here's a more complete example, moving servo 0 between two positions:
 
 ```python
@@ -57,11 +61,11 @@ Blocks for controlling servos can be found in the **Movement** section.
 
 ## Setting initial servo position
 
-The initial position of servos can be set before your code starts running using project attributes. Values can be any integer between -100 and 100 inclusive.
+The initial position of servos can be set before your code starts running using project attributes.
 
-|Attribute|Values||
-|-|-|-|
-|`servo0_pos`|x ∈ ℤ|Initial position of servo 0|
-|`servo1_pos`|x ∈ ℤ|Initial position of servo 1|
-|`servo2_pos`|x ∈ ℤ|Initial position of servo 2|
-|`servo3_pos`|x ∈ ℤ|Initial position of servo 3|
+|Attribute||
+|-|-|
+|`servo0_pos`|Initial position of servo 0|
+|`servo1_pos`|Initial position of servo 1|
+|`servo2_pos`|Initial position of servo 2|
+|`servo3_pos`|Initial position of servo 3|
