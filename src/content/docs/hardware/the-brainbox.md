@@ -94,6 +94,8 @@ The PWM pins ranges:
 | 178   | 2.39ms |
 | \-178 | 0.61ms |
 
+On generation 3 BrainBoxes values are limited to between -140 (0.8ms) and 140 (2.2ms), so the 178 and -178 rows do not apply.
+
 ## Pin Out (Generation 3)
 
 ### IO

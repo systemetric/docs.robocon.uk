@@ -12,7 +12,7 @@ When you control motors, you can choose how much power you want to give them. Th
 If you have large motors you should avoid using 100% power when the motor is stalled or stationary, otherwise the rush of current may cause the robot to shut down the motor output. Instead of jumping from 0% to 100% start at a lower value such as 50% and work your way up.
 :::
 
-If you want to spin your motors in reverse, just stick a negative sign in front of your percentage.
+If you want to spin your motors in reverse, just stick a negative sign in front of your percentage. Values outside of -100 to 100 are limited to that range, so setting a motor to 150 is the same as setting it to 100.
 
 ## Python
 
@@ -30,6 +30,8 @@ To stop both motors:
 I.motors[0] = 0
 I.motors[1] = 0
 ```
+
+When your robot has completely finished, `I.stop()` stops both motors and also turns off the 12v power. It doesn't move your servos. If you only want to pause, set the motors to 0 as above instead.
 
 Here's a more complete example:
 
@@ -55,6 +57,8 @@ By default the BrainBox is designed to work safely with the TT motors supplied, 
 ```python
 I = IO(max_motor_voltage=9)
 ```
+
+This can be set to anything from 0 to 12, other values will give an error.
 
 We do not recommend running motors above their design voltage, it may (sometimes dramatically) shorten the lifespan of your motors. If you choose to overvolt your motors you should be prepared to swap them with spares and design your robot to ensure you have access to replace them.
 :::

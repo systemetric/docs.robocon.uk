@@ -6,28 +6,31 @@ sidebar:
 ---
 The GPIO (General Purpose Input Output) allows you to turn on LEDs, react to button presses, or do just about anything.
 
-Our BrainBox has 4 GPIO pins that you can control. Before you do anything with a pin, you must first set its mode. GPIO control is provided by the `io` subsystem of the robot library.
+Our BrainBox has 4 GPIO pins that you can control. Before you do anything with a pin, you must first set its mode. GPIO control is provided by the `IO` class in the `robocon.brain` submodule.
 
-There are 4 modes:
+There are 5 modes:
 |Mode|Python|Description|
 |-|-|-|
 |Digital Output|`robocon.brain.OUTPUT`|Allows you to write a high or low signal|
 |Digital Input|`robocon.brain.INPUT`|Allows you to read a high or low signal|
 |Analog Input|`robocon.brain.INPUT_ANALOG`|Allows you to read a voltage, like a voltmeter|
 |Pullup Input|`robocon.brain.INPUT_PULLUP`|Like input, but uses a [weak pullup resistor](#pull-ups)|
+|PWM Output|`robocon.brain.PWM_SERVO`|Outputs a servo signal, set the position in the same way as [a servo](/programming/servos). Generation 3 BrainBoxes only|
 
 :::tip
-The GPIO are numbered 0-3
+The GPIO are numbered 0-3. On generation 2 BrainBoxes they are numbered 1-4 instead, so add one to the pin numbers in the examples below.
 :::
 
 :::tip
-The mode constants are provided by the `robocon.brain` submodule, you may wish to import these first:
+The `IO` class and the mode constants are provided by the `robocon.brain` submodule. The examples below assume you have imported them and created your `IO` object first:
 
 ```python
-from robocon.brain import OUTPUT, INPUT, INPUT_ANALOG, INPUT_PULLUP
+from robocon.brain import IO, OUTPUT, INPUT, INPUT_ANALOG, INPUT_PULLUP, PWM_SERVO
+
+I = IO()
 ```
 
-If you choose not to, you will need to use the prefix `robocon.brain.` on each constant.
+If you choose not to import the constants by name, use `import robocon.brain` and add the prefix `robocon.brain.` to each one. A plain `import robocon` is not enough, as it does not load the submodule.
 :::
 
 ## Python
@@ -60,7 +63,7 @@ print(I.gpio[3].digital) # Note that this output will be inverted - True when th
 ```
 
 :::tip
-All modes can be used on all pins. Note that you only need to set this mode once in your code, not every time you read an input or send an output.
+All modes can be used on all pins, except that `PWM_SERVO` needs a generation 3 BrainBox. Note that you only need to set this mode once in your code, not every time you read an input or send an output.
 :::
 
 Here's a more complete example:
