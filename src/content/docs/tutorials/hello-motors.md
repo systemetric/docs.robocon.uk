@@ -22,9 +22,9 @@ I = IO()
 Motor power is automatically scaled for the 3-6V motors included in the kit, if you are sourcing your own motors then see [the motors reference](/programming/motors) for how to allow faster speeds.
 :::
 
-Now that everything is set up, it's time to set the motors. All the motors are stored in a list inside the Robot variable - to access the first motor, you can use `I.motors[0]`, the second motor is found with `I.motors[1]`.
+Now that everything is set up, it's time to set the motors. All the motors are stored in a list inside the `I` variable - to access the first motor, you can use `I.motors[0]`, the second motor is found with `I.motors[1]`.
 
-Changing the speed of the motor is easy - just set the motor to a number from -100 to 100. Immediately setting the power to 100 can have unwanted side effects, so we'll start by setting them to half power:
+Changing the speed of the motor is easy - just set the motor to a number from -100 to 100 (anything outside of this range is limited to it). Immediately setting the power to 100 can have unwanted side effects, so we'll start by setting them to half power:
 ```python
 import time
 from robocon.brain import *
