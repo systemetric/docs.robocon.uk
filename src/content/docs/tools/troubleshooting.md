@@ -12,11 +12,7 @@ Unless the battery is really very low the front led will blink very briefly when
 
 ## The BrainBox appears to power up, but I can't connect to the website and the blue LED lights up but never starts flashing.
 
-This can happen if erroneous code which does not start with `R = robot.Robot()` is uploaded to The BrainBox. If you think this may have happened, download [this file](/assets/main.py) and place it on a USB stick. Put the USB stick into The BrainBox and turn the robot on normally. Wait 5 minutes, if you do not at this point get the flashing blue light, [contact us](mailto:robotics@hrsfc.ac.uk).
-
-:::caution
-Using this file will overwrite the current robot code. It will not touch any other files you have stored in the editor.
-:::
+This is probably a software failure on our side, if you witness behaviour similar to this you should [contact us](mailto:robotics@hrsfc.ac.uk).
 
 ## I've connected a battery and the power switch to the black connector but never get any lights on the Brainbox
 If the battery is fresh, it's possible that the switch has failed or become internally disconnected. For testing purposes, you can swap the power switch for a single piece of wire. NOTE: at the competition, you must have a red power switch to control your robot as per the rules. Finally - in exceptional circumstances the fuse in the cable may have failed, if this has happened then there must have been some terminal problem internal to the BrainBox - [contact us](mailto:robotics@hrsfc.ac.uk) for instructions. 
@@ -37,19 +33,23 @@ It is possible to enable/disable this power output from software. When the outpu
 
 ## I'm trying to read an analog value from GPIOs, but I'm getting strange values.
 
-Check  you're actually reading the pin you're trying to read. `R.gpio[0]` is Pin 0, `R.gpio[3]` is Pin 3, etc. If everything's connected correctly, try setting the other pins to output and writing `False` to them.
+Check  you're actually reading the pin you're trying to read. `I.gpio[0]` is Pin 0, `I.gpio[3]` is Pin 3, etc. If everything's connected correctly, try setting the other pins to output and writing `False` to them.
 
-## R.see() doesn't seem to work.
+## C.capture() doesn't seem to work.
 
-When you call R.see() the camera preview in the top right should show you what the camera can see. If this image is consistently blurred, incorrect looking, or not loading, try placing some markers in front of the camera and try:
+When you call `C.capture()` the camera preview in the top right should show you what the camera can see. If this image is consistently blurred, incorrect looking, or not loading, try placing some markers in front of the camera and try:
 ```py
-print(R.see())
+from robocon.vision import Camera
+
+C = Camera()
+
+print(C.capture())
 ```
 If this prints out the markers you placed in front of the robot in the debug console, the issue is most likely just with the editor's camera preview. [Contact us](mailto:robotics@hrsfc.ac.uk) if the issue persists, but this shouldn't prevent your robot from running the code. 
 However, if the robot cannot find markers, then the camera itself is most likely having problems. Contact us about changing the focus of the camera. Note that the robot being in motion may add blur to the images taken, and prevent the marker detection system from functioning.
 
 :::note
-Calling `R.see()` at a high rate (with a sleep of less than 2 seconds between each call, or no sleep at all) may result in issues with the camera preview such as frames being dropped or blurred. Try slowing down your loop to see if this helps with the issue.
+Calling `C.capture()` at a high rate (with a sleep of less than 2 seconds between each call, or no sleep at all) may result in issues with the camera preview such as frames being dropped or blurred. Try slowing down your loop to see if this helps with the issue.
 :::
 
 ## Can you post a kit to or from Hills Road

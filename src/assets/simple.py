@@ -1,3 +1,3 @@
-import robot
+from robocon.brain import IO
 
-R = robot.Robot()
+I = IO()

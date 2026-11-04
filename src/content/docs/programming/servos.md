@@ -12,7 +12,7 @@ Servos are plugged into the **Servo** ports on the BrainBox. The numbers present
 
 ## Python
 
-Servo control is provided by the `io` subsystem of the robot library. You will need to import the `IO` object and various constants from this module before using servos.
+Servo control is provided by the `IO` class in the `robocon.brain` submodule. You will need to import `IO` and the `PWM_SERVO` constant from this module before using servos.
 
 You can control servos using the `servos` property of the `IO` object. To set the servo 0 to the 50% position use:
 
@@ -22,11 +22,11 @@ I.servos[0] = 50
 ```
 
 :::tip
-For example, to control servo 3 instead, replace `servos[0]` with `servos[3]`. Again, remember that indexes start at 0.
+For example, to control servo 3 instead, replace `servos[0]` with `servos[3]`. Again, remember that indexes start at 0. On generation 2 BrainBoxes servos are numbered 1-4 instead.
 :::
 
 :::note
-Servo positions are weird, 0% refers to a "neutral" position that is typically the centre of movement. 100%/-100% may also not correspond to the start/end positions of the servo respectively, for this reason, you can set the position beyond 100%/-100%, though setting too far may damage your servos!
+Servo positions are weird, 0% refers to a "neutral" position that is typically the centre of movement. 100%/-100% may also not correspond to the start/end positions of the servo respectively, for this reason, you can set the position beyond 100%/-100%, though setting too far may damage your servos! On generation 3 BrainBoxes the position is limited to between -140% and 140%.
 :::
 
 Here's a more complete example, moving servo 0 between two positions:

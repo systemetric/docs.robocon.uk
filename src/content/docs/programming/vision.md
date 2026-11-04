@@ -8,7 +8,7 @@ Computer Vision allows your robots to understand their environment. For the comp
 
 ## Python
 
-Computer vision is provided by the `vision` subsystem of the robot library, you will need to import it before using any of the examples given. Many examples here make use of game-specific constants which can br found in the `robocon.game` submodule.
+Computer vision is provided by the `vision` subsystem of the robot library, you will need to import it before using any of the examples given. Many examples here make use of game-specific constants which can be found in the `robocon.game` submodule.
 
 To look for markers call `capture()` on the `Camera` object:
 
@@ -21,11 +21,11 @@ print(markers)
 `markers` is a Python list of "marker objects", which each look like the following:
 
 ```
-[target Marker 0: 0.856m @0.754 degrees
+[MARKER_TYPE.REFUEL_STATION Marker 100: 0.856m @0.754 degrees
 {
-  info.type = ...
-  info.id = 50
-  info.target_type = ...
+  info.type = MARKER_TYPE.REFUEL_STATION
+  info.id = 100
+  info.owning_team = TEAM.RED
   dist = 0.856
   bearing.y = 0.754
   bearing.x = 1.03e+02
@@ -47,16 +47,17 @@ Full reference of the properties are further below but some useful properties ar
 |`marker.info.id`|Numeric code of the marker|
 |`marker.info.type`|The type of marker detected, this is a competition dependent constant|
 |`marker.info.target_type`|The type of target detected, if applicable, this is a competition dependent constant|
+|`marker.info.owning_team`|The team which owns the marker, if applicable|
 
 ## Codes
 
 :::tip
-You do not need to use the marker ids themselves for your calculations. Use `marker.type` and `marker.target_type` instead to find out the information you need (see above).
+You do not need to use the marker ids themselves for your calculations. Use `marker.info.type` and `marker.info.target_type` instead to find out the information you need (see above).
 :::
 
 Every April Tag has a code:
 
-- April tags 0-20 will be used for power stations within the arena.
+- April tags 0-19 will be used for power stations within the arena.
 
 - April tags 100, 106, 112, 118 are used for refuel stations for their
     respective zones, and replace an arena wall marker.
@@ -65,11 +66,11 @@ Every April Tag has a code:
   specifics on where around the rules they will be placed. Some of these
   markers are for refuel stations, see further details in the table below.
 
-- You do not need to use the marker numbers, and can instead use marker.type and marker.owning_team
+- You do not need to use the marker numbers, and can instead use `marker.info.type` and `marker.info.owning_team`
 
 |Function|Codes|
 |-|-|
-|Power Station|0 - 20|
+|Power Station|0 - 19|
 |Refuel Station 0 (Red)|100|
 |Refuel Station 1 (Yellow)|106|
 |Refuel Station 2 (Green)|112|
@@ -152,11 +153,13 @@ A `Marker` object contains information about a _detected_ marker. It has the fol
 |`info`|An object with various information about the marker|
 |`info.id`|The ID number of the marker|
 |`info.size`|The length of the black edge of the marker in meters|
-|`info.type`|Returns `ARENA` for a wall marker, `REFUEL_STATION` for refuel station markers, and `POWER_STATION` for power station markers.|
-|`info.bounding_box_colour`|A tuple describing the colour which is drawn around the marker in the preview image (Blue, Red, Green)|
+|`info.type`|Returns `MARKER_TYPE.ARENA` for a wall marker, `MARKER_TYPE.REFUEL_STATION` for refuel station markers, and `MARKER_TYPE.POWER_STATION` for power station markers.|
+|`info.owning_team`|The `TEAM` which owns the marker, or `None` if it isn't owned by a team. Only refuel stations are owned by a team.|
+|`info.target_type`|`TARGET_TYPE.REFUEL_STATION` for refuel station markers, otherwise `None`.|
+|`info.bounding_box_color`|A tuple describing the colour which is drawn around the marker in the preview image (Red, Green, Blue)|
 |`detection`|Technical information which has been inferred from the image.|
 |`detection.tag_family`|The family of AprilTag which is detected. RoboCon currently only uses `tag36h11`.|
-|`detection.tag_id`|The ID number of the detected marker. Aliased by `marker.info.id`.|
+|`detection.id`|The ID number of the detected marker. Aliased by `marker.info.id`.|
 |`detection.hamming`|The number of bits which were corrected. The detector cannon detect tags with a hamming distance greater than 2.|
 |`detection.decision_margin`|A measure of the quality of the binary decoding process; the average difference between the intensity of a data bit versus the decision threshold. Higher numbers roughly indicate better decodes. Only effective for tags which appear small.|
 |`detection.homography`|The 3x3 homography matrix describing the projection from an "ideal" tag (with corners at (-1,1), (1,1), (1,-1), and (-1, -1)) to pixels in the image.|
@@ -199,7 +202,7 @@ An interface to the lower-level camera hardware is provided in case you want to 
 
 ### Changing the resolution
 
-By default the camera takes pictures at a resolution of **640x480px**. You can change this by setting the `res` parameter.
+The default resolution depends on your camera, see the lists below. You can change this by setting the `res` parameter.
 
 ```python
 from robocon.vision import Camera
@@ -207,25 +210,31 @@ from robocon.vision import Camera
 C = Camera()
 
 print(f"The current res is set to {C.phy.res}")
-C.phy.res = (1920, 1440)
+C.phy.res = (640, 480)
 print(f"The current res is set to {C.phy.res}")
 ```
 
 For generation 2 BrainBoxes (sensor `imx219`), you must use one of the following resolutions:
 
-- `(640, 480)
+- `(640, 480)`
 - `(1296, 736)`
 - `(1296, 976)`
 - `(1640, 1232)` _(default)_
 - `(1920, 1088)`
 - `(1920, 1440)`
 
-For generation 3 BrainBoxes (sensor `ov5647`), you must one of the following resolutions:
+For generation 3 BrainBoxes (sensor `ov5647`), you must use one of the following resolutions:
 
 - `(640, 480)`
-- `(1292, 972)` _(default)_
+- `(1296, 972)` _(default)_
 - `(1920, 1080)`
 - `(2592, 1944)`
+
+For global shutter cameras (sensor `ov9281`), you must use one of the following resolutions:
+
+- `(640, 480)`
+- `(1280, 720)`
+- `(1280, 800)` _(default)_
 
 :::tip
 Using a higher resolution will increase the amount of time it takes to process the image, but you may be able to see more. Using a smaller resolution will be faster, but markers further away may stop being visible.
@@ -274,7 +283,9 @@ print(C.capture())
 You may now wish to change the resolution of your camera, this can be done the same as before with `C.phy.res = (width,height)`.
 
 :::note
-Some resolutions may not work with your USB camera, as different cameras support different resolutions. Check your camera's documentation. If you try and use a resolution that your camera doesn't support, you will get an error that will state the closest resolution to the value you attempted to use. Try changing your resolution to the value that the error message suggests!
+Some resolutions may not work with your USB camera, as different cameras support different resolutions. Check your camera's documentation. If you try and use a resolution that your camera doesn't support, you will get an error that states the width or height the camera gave instead of the one you asked for. Try changing your resolution to that value!
+
+You must also set a focal length for any resolution other than `(640, 480)`, `(1296, 736)`, `(1296, 976)`, `(1920, 1088)` and `(1920, 1440)` before you use it, otherwise you will get a `KeyError`. See [Calibrating the camera](#calibrating-the-camera).
 :::
 
 For example, to set a USB Camera's resolution to `800x600`:
@@ -284,6 +295,7 @@ from robocon.vision import Camera, RoboConUSBCamera
 
 C = Camera(phy=RoboConUSBCamera)
 
+C.phy.focal_lengths[(800, 600)] = (600, 600) # replace with your calibrated value
 C.phy.res = (800, 600)
 print(C.capture())
 ```
@@ -322,8 +334,10 @@ The code above will output a focal length value which you should use **before** 
 For example, if your focal length was `123` at the resolution of `800x600`, you should use the following lines of code, in the **same order**:
 
 ``` python
-from robot.vision import Camera, RoboConUSBCamera
+from robocon.vision import Camera, RoboConUSBCamera
 C = Camera(phy=RoboConUSBCamera)
+
+resolution = (800, 600)
 
 C.phy.focal_lengths[resolution] = (123, 123)
 C.phy.res = resolution
