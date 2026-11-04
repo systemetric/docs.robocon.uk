@@ -18,7 +18,7 @@ There are 5 modes:
 |PWM Output|`robocon.brain.PWM_SERVO`|Outputs a servo signal, set the position in the same way as [a servo](/programming/servos). Generation 3 BrainBoxes only|
 
 :::tip
-The GPIO are numbered 0-3. On generation 2 BrainBoxes they are numbered 1-4 instead, so add one to the pin numbers in the examples below.
+The GPIO are numbered 0-3. Generation 2 BrainBoxes were previously numbered 1-4 instead, but this is no longer the case.
 :::
 
 :::tip

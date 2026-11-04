@@ -12,11 +12,7 @@ Unless the battery is really very low the front led will blink very briefly when
 
 ## The BrainBox appears to power up, but I can't connect to the website and the blue LED lights up but never starts flashing.
 
-This can happen if erroneous code is uploaded to The BrainBox. If you think this may have happened, download [this file](/assets/main.py) and place it on a USB stick. Put the USB stick into The BrainBox and turn the robot on normally. Wait 5 minutes, if you do not at this point get the flashing blue light, [contact us](mailto:robotics@hrsfc.ac.uk).
-
-:::caution
-Using this file will overwrite the current robot code. It will not touch any other files you have stored in the editor.
-:::
+This is probably a software failure on our side, if you witness behaviour similar to this you should [contact us](mailto:robotics@hrsfc.ac.uk).
 
 ## I've connected a battery and the power switch to the black connector but never get any lights on the Brainbox
 If the battery is fresh, it's possible that the switch has failed or become internally disconnected. For testing purposes, you can swap the power switch for a single piece of wire. NOTE: at the competition, you must have a red power switch to control your robot as per the rules. Finally - in exceptional circumstances the fuse in the cable may have failed, if this has happened then there must have been some terminal problem internal to the BrainBox - [contact us](mailto:robotics@hrsfc.ac.uk) for instructions. 
