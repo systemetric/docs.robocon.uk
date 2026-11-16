@@ -30,7 +30,7 @@ To begin, get familiar with the kit provided. It includes:
 | 2     | Wheels                    |
 | 1     | Caster Wheel              |
 | 1     | Chassis Kit               |
-| 2     | Servo Motor               |
+| 1     | Servo Motor               |
 | 1     | Start Button              |
 | 1     | Power Switch              |
 
